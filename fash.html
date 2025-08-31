@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IMPILO Magazine</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.4/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#000000',
+            'secondary': '#ffffff',
+            'gold': '#d4af37',
+            'overlay': 'rgba(0,0,0,0.6)',
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-primary text-secondary font-body">
+  <!-- Header with Logo -->
+  <header class="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4 bg-black border-b border-gold sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <img src="https://via.placeholder.com/60x60.png?text=Logo" alt="IMPILO Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gold">
+      <h1 class="text-xl sm:text-2xl font-heading text-gold">IMPILO Magazine</h1>
+    </div>
+    <!-- Mobile Nav -->
+    <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl"><i class="fas fa-bars"></i></button>
+    <nav id="mainNav" class="hidden md:flex gap-4 lg:gap-6 text-secondary font-semibold text-sm lg:text-base">
+      <a href="#" class="hover:text-gold transition">Home</a>
+      <a href="#" class="hover:text-gold transition">Issues</a>
+      <a href="#" class="hover:text-gold transition">Sections</a>
+      <a href="#" class="hover:text-gold transition">Jozi Fashion</a>
+      <a href="#" class="hover:text-gold transition">Modelling</a>
+      <a href="#" class="hover:text-gold transition">Streaming</a>
+      <a href="#" class="hover:text-gold transition">Catalogue</a>
+      <a href="#" class="hover:text-gold transition">Subscribe</a>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobileMenu" class="hidden flex-col bg-black text-secondary p-6 border-b border-gold md:hidden space-y-2">
+    <a href="#" class="py-2 hover:text-gold transition">Home</a>
+    <a href="#" class="py-2 hover:text-gold transition">Issues</a>
+    <a href="#" class="py-2 hover:text-gold transition">Sections</a>
+    <a href="#" class="py-2 hover:text-gold transition">Jozi Fashion</a>
+    <a href="#" class="py-2 hover:text-gold transition">Modelling</a>
+    <a href="#" class="py-2 hover:text-gold transition">Streaming</a>
+    <a href="#" class="py-2 hover:text-gold transition">Catalogue</a>
+    <a href="#" class="py-2 hover:text-gold transition">Subscribe</a>
+  </div>
+
+  <!-- Hero Section with Slider -->
+  <section class="relative">
+    <div id="main-slider" class="owl-carousel owl-theme">
+      <div class="h-[60vh] sm:h-[75vh] bg-cover bg-center flex items-center justify-center text-center px-6" style="background-image: url('https://via.placeholder.com/1200x600.png?text=IMPILO+Cover+1');">
+        <div class="bg-overlay p-6 sm:p-10 rounded-lg">
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4">Celebrating African Creativity</h2>
+          <p class="text-sm sm:text-base lg:text-lg mb-6">Dive into fashion, lifestyle, and innovation with IMPILO Magazine.</p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="#" class="btn bg-gold text-black hover:bg-black hover:text-gold">Read Issue</a>
+            <a href="#" class="btn bg-black text-gold hover:bg-gold hover:text-black">Subscribe</a>
+          </div>
+        </div>
+      </div>
+      <div class="h-[60vh] sm:h-[75vh] bg-cover bg-center flex items-center justify-center text-center px-6" style="background-image: url('https://via.placeholder.com/1200x600.png?text=IMPILO+Cover+2');">
+        <div class="bg-overlay p-6 sm:p-10 rounded-lg">
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-heading font-bold mb-4">Jozi Fashion Runway</h2>
+          <p class="text-sm sm:text-base lg:text-lg mb-6">Experience glamour, culture, and the latest trends from Johannesburg’s iconic fashion scene.</p>
+          <a href="#" class="btn bg-gold text-black hover:bg-black hover:text-gold">Explore Runway</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription CTA -->
+  <section class="py-16 sm:py-20 bg-gold text-black text-center px-4">
+    <h2 class="text-2xl sm:text-4xl font-heading font-bold mb-6">Stay Connected with IMPILO</h2>
+    <p class="mb-6 sm:mb-8 text-sm sm:text-base">Sign up to receive updates on new issues, events, and exclusive features.</p>
+    <form class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">
+      <input type="email" placeholder="Enter your email" class="px-4 py-3 rounded-md border border-black w-full text-black" required>
+      <button type="submit" class="btn bg-black text-gold hover:bg-white hover:text-black">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gold py-10 sm:py-12 text-center px-4">
+    <div class="flex flex-col items-center gap-4">
+      <img src="https://via.placeholder.com/60x60.png?text=Logo" alt="IMPILO Logo" class="w-12 h-12 rounded-full border border-gold">
+      <h3 class="text-gold font-heading text-lg sm:text-xl">Impilo Digital Media Group</h3>
+      <p class="text-secondary text-xs sm:text-sm">&copy; 2025 IMPILO Magazine. All rights reserved.</p>
+
+      <!-- Footer Navigation -->
+      <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 mt-6 text-secondary font-medium text-sm">
+        <a href="#" class="hover:text-gold transition">Home</a>
+        <a href="#" class="hover:text-gold transition">Issues</a>
+        <a href="#" class="hover:text-gold transition">Jozi Fashion</a>
+        <a href="#" class="hover:text-gold transition">Modelling</a>
+        <a href="#" class="hover:text-gold transition">Streaming</a>
+        <a href="#" class="hover:text-gold transition">Catalogue</a>
+        <a href="#" class="hover:text-gold transition">Subscribe</a>
+      </nav>
+
+      <!-- Social Links -->
+      <div class="flex gap-6 mt-6 text-gold text-lg sm:text-xl">
+        <a href="https://facebook.com/impilomag" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/impilomag" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/impilomag" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/@impilomag" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Action Button (FAB) -->
+  <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:hidden flex flex-col gap-3 z-50">
+    <a href="#" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-gold text-black shadow-lg hover:bg-black hover:text-gold transition" title="Subscribe">
+      <i class="fas fa-star text-lg sm:text-xl"></i>
+    </a>
+    <a href="#" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-black text-gold shadow-lg hover:bg-gold hover:text-black transition" title="Stream Now">
+      <i class="fas fa-play text-lg sm:text-xl"></i>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+  <script src="./script.js"></script>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+
+    // Carousel enhancements
+    $(document).ready(function(){
+      $('#main-slider').owlCarousel({
+        items:1,
+        loop:true,
+        autoplay:true,
+        autoplayTimeout:4000,
+        smartSpeed:800,
+        nav:false,
+        dots:true,
+        touchDrag:true,
+        mouseDrag:true
+      });
+    });
+  </script>
+</body>
+</html>
