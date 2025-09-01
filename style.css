@@ -4,3 +4,29 @@ body {
   color: #fff;
   overflow-x: hidden;
 }
+.owl-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.owl-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #444;
+  border: 2px solid #d4af37;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.owl-dot.active,
+.owl-dot:hover {
+  background-color: #d4af37;
+  transform: scale(1.2);
+}
+@media (max-width: 640px) {
+  .owl-dot {
+    width: 18px;
+    height: 18px;
+  }
+}
+

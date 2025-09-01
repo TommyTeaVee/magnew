@@ -41,7 +41,7 @@
     <nav id="mainNav" class="hidden md:flex gap-4 lg:gap-6 text-secondary font-semibold text-sm lg:text-base">
       <a href="#" class="hover:text-gold transition">Home</a>
       <a href="#" class="hover:text-gold transition">Issues</a>
-      <a href="#" class="hover:text-gold transition">Sections</a>
+      <a href="#" class="hover:text-gold transition">Services</a>
       <a href="#" class="hover:text-gold transition">Jozi Fashion</a>
       <a href="#" class="hover:text-gold transition">Modelling</a>
       <a href="#" class="hover:text-gold transition">Streaming</a>
@@ -54,12 +54,12 @@
   <div id="mobileMenu" class="hidden flex-col bg-black text-secondary p-6 border-b border-gold md:hidden space-y-2">
     <a href="#" class="py-2 hover:text-gold transition">Home</a>
     <a href="#" class="py-2 hover:text-gold transition">Issues</a>
-    <a href="#" class="py-2 hover:text-gold transition">Sections</a>
+    <a href="#" class="py-2 hover:text-gold transition">Services</a>
     <a href="#" class="py-2 hover:text-gold transition">Jozi Fashion</a>
     <a href="#" class="py-2 hover:text-gold transition">Modelling</a>
     <a href="#" class="py-2 hover:text-gold transition">Streaming</a>
     <a href="#" class="py-2 hover:text-gold transition">Catalogue</a>
-    <a href="#" class="py-2 hover:text-gold transition">Subscribe</a>
+    <a href="#" class="py-2 hover:text-gold transition">Gallery</a>
   </div>
 
   <!-- Hero Section with Slider -->
@@ -88,6 +88,7 @@
           <div class="flex flex-col gap-5 md:gap-8">
             <h2 class="text-4xl font-heading font-bold text-gold">Culture & Creativity</h2>
             <p class="text-lg max-w-xl">From Jozi streets to global runways — dive into our deep features on African innovation and cultural expression.</p>
+      
             <div class="flex flex-row items-center gap-4">
               <a href="#" class="btn bg-gold text-black hover:bg-black hover:text-gold border-none">Read Issue <i class="pl-2 fa-solid fa-book-open"></i></a>
               <button class="btn bg-primary border border-gold text-gold hover:bg-gold hover:text-black">Subscribe</button>
@@ -97,24 +98,29 @@
       </div>
     </div>
 
-    <!-- Thumbnails (Past Issues) -->
-    <div class="hidden md:block absolute top-[50%] -right-14 bg-black/70 py-5 pl-5 rounded-xl z-[1] w-[450px]">
-      <h3 class="text-gold font-heading mb-4 text-xl">Past Issues</h3>
-      <div id="slider-thumb" class="owl-carousel owl-theme">
-        <div class="item"><img src="https://raw.githubusercontent.com/TommyTeaVee/ImpiloV2/refs/heads/master/public/1.png" alt="image" class="w-64 h-72 object-cover rounded-xl" /></div>
-        <div class="item"><img src="https://raw.githubusercontent.com/TommyTeaVee/ImpiloV2/refs/heads/master/public/cover.png" alt="image"  class="w-64 h-72 object-cover rounded-xl" /></div>
-        <div class="item"><img src="https://github.com/TommyTeaVee/ImpiloV2/blob/digital/public/recover.png?raw=true" alt="image" class="w-64 h-72 object-cover rounded-xl" /></div>
-        <div class="item"><img src="https://github.com/TommyTeaVee/ImpiloV2/blob/wise-K/public/Impilo_cover.png?raw=true" alt="image"  class="w-64 h-72 object-cover rounded-xl" /></div>
-      </div>
-      <!-- Slider Nav -->
-      <div class="flex flex-row gap-3 pt-4">
-        <button type="button" class="customPrevBtn py-1 px-2 rounded-sm bg-black text-gold hover:bg-gold hover:text-black">
-          <i class="fa-solid fa-chevron-left"></i></button>
-        <button type="button" class="customNextBtn py-1 px-2 rounded-sm bg-black text-gold hover:bg-gold hover:text-black">
-          <i class="fa-solid fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
+<!-- Thumbnails (Past Issues) -->
+<div class="block md:absolute md:top-[50%] md:-right-14 bg-black/70 py-5 pl-5 rounded-xl z-[1] w-full md:w-[700px] mt-6 md:mt-0">
+  <h3 class="text-gold font-heading mb-4 text-xl">Past Issues</h3>
+  <div id="slider-thumb" class="owl-carousel owl-theme">
+    <div class="item" data-index="0"><img src="./media/genesis.jpg" alt="Issue 1" class="w-64 h-72 object-cover rounded-xl cursor-pointer" /></div>
+    <div class="item" data-index="1"><img src="https://raw.githubusercontent.com/TommyTeaVee/ImpiloV2/refs/heads/master/public/cover.png" alt="Issue 2" class="w-64 h-72 object-cover rounded-xl cursor-pointer" /></div>
+     <div class="item" data-index="2"><img src="./media//magco.png" alt="Issue 3" class="w-64 h-72 object-cover rounded-xl cursor-pointer" alt="Issue 3"/></div>
+    <div class="item" data-index="3"><img src="https://github.com/TommyTeaVee/ImpiloV2/blob/digital/public/recover.png?raw=true" alt="Issue 4" class="w-64 h-72 object-cover rounded-xl cursor-pointer" /></div>
+    <div class="item" data-index="4"><img src="https://github.com/TommyTeaVee/ImpiloV2/blob/wise-K/public/Impilo_cover.png?raw=true" alt="Issue 5" class="w-64 h-72 object-cover rounded-xl cursor-pointer" /></div>
+    <div class="item" data-index="5"><img src="./media/mag_cover.png" alt="Issue 4" class="w-64 h-72 object-cover rounded-xl cursor-pointer" /></div>
+    <div class="item" data-index="6"><img src="https://github.com/TommyTeaVee/ImpiloV2/blob/wise-K/public/Impilo_cover.png?raw=true" alt="Issue 4" class="w-64 h-72 object-cover rounded-xl cursor-pointer" /></div>
+  </div>
+  <!-- Slider Nav -->
+  <div class="flex flex-row gap-3 pt-4">
+    <button type="button" class="customPrevBtn py-1 px-2 rounded-sm bg-black text-gold hover:bg-gold hover:text-black">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button type="button" class="customNextBtn py-1 px-2 rounded-sm bg-black text-gold hover:bg-gold hover:text-black">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
 
   <!-- Featured Sections -->
   <section class="py-16 px-6 lg:px-20 bg-black text-secondary">
@@ -134,7 +140,7 @@
     </strong> celebrates local and global designers with a showcase of bold style, cultural identity, and cinematic storytelling. 
     The event offers live broadcasting on big screens and streaming platforms, giving audiences everywhere front-row access.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <img src="./media/fash.jpg" width="200" height="200"
+      <img src="./media/fash.jpg" class="aspect-3/2 object-cover"
        alt="Jozi Fashion Runway" class="rounded-xl border border-gold object-cover w-full h-full">
       <div class="w-full max-w-lg mx-auto p-4">
   <iframe 
@@ -161,7 +167,7 @@
           workshops, and global exposure. From runway to campaigns, we elevate voices and stories that deserve to be seen.</p>
         <a href="#" class="btn bg-gold text-black hover:bg-black hover:text-gold w-fit">Join the Agency</a>
       </div>
-      <img src="https://via.placeholder.com/600x400.png?text=Modelling+Agency" alt="Impilo Modelling Agency" class="rounded-xl border border-gold object-cover w-full h-full">
+      <img src="./media/thando.jpg" alt="Impilo Modelling Agency" class="rounded-xl border border-gold object-cover w-full h-full">
     </div>
   </section>
 
@@ -222,7 +228,7 @@
         <a href="#" class="hover:text-gold transition">Issues</a>
         <a href="#" class="hover:text-gold transition">Jozi Fashion</a>
         <a href="#" class="hover:text-gold transition">Modelling</a>
-        <a href="#" class="hover:text-gold transition">Streaming</a>
+        <a href="#" class="hover:text-gold transition">Podcast</a>
         <a href="#" class="hover:text-gold transition">Catalogue</a>
         <a href="#" class="hover:text-gold transition">Subscribe</a>
       </nav>
