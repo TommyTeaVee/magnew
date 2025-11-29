@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impilo Modelling Agency</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+  .text-gold { color: #FFD700; }
+</style>
+</head>
+<body class="bg-black text-white font-sans">
+
+<!-- Header -->
+<header class="bg-black text-gold p-6 flex justify-between items-center border-b border-gold sticky top-0 z-50">
+  <h1 class="text-2xl font-bold">Impilo Modelling Agency</h1>
+  <nav class="hidden md:flex gap-6 font-semibold">
+    <a href="#editorial" class="hover:text-white">Editorial & Commercial</a>
+    <a href="#runway" class="hover:text-white">Fashion Runway</a>
+    <a href="#photoshoot" class="hover:text-white">Professional Photoshoot</a>
+    <a href="#social" class="hover:text-white">Social Media</a>
+    <a href="#performance" class="hover:text-white">Performance Arts</a>
+    <a href="#portfolio" class="hover:text-white">Portfolio Development</a>
+  </nav>
+  <button id="mobileBtn" class="md:hidden text-gold text-2xl"><i class="fas fa-bars"></i></button>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden flex-col bg-black p-6 border-b border-gold md:hidden">
+  <a href="#editorial" class="py-2 hover:text-gold">Editorial & Commercial</a>
+  <a href="#runway" class="py-2 hover:text-gold">Fashion Runway</a>
+  <a href="#photoshoot" class="py-2 hover:text-gold">Professional Photoshoot</a>
+  <a href="#social" class="py-2 hover:text-gold">Social Media</a>
+  <a href="#performance" class="py-2 hover:text-gold">Performance Arts</a>
+  <a href="#portfolio" class="py-2 hover:text-gold">Portfolio Development</a>
+</div>
+
+<!-- Section Template Function -->
+<!-- Each section includes: Title, Description, Model Images, Expandable Detailed Description -->
+
+<!-- Editorial & Commercial -->
+<section id="editorial" class="py-20 px-6 md:px-20 bg-gray-900">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gold mb-4">Editorial & Commercial Modeling</h2>
+      <p class="text-gray-300 mb-6">
+        Our editorial and commercial modeling service ensures professional representation for campaigns, magazines, and brand promotions. Models embody style, poise, and brand narrative seamlessly.
+      </p>
+      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#editorial-more">Learn More & Apply</button>
+      <div id="editorial-more" class="hidden text-gray-300 mt-4">
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Full editorial photoshoots for magazines, lookbooks, and brand campaigns.</li>
+          <li>Commercial modeling for advertisements, TV, and online media.</li>
+          <li>Professional guidance on styling, poses, and brand storytelling.</li>
+          <li>Portfolio-ready images to boost career opportunities.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="md:w-1/2 grid grid-cols-2 gap-2">
+      <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" class="rounded-lg h-48 w-full object-cover">
+      <img src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg" class="rounded-lg h-48 w-full object-cover">
+      <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg" class="rounded-lg h-48 w-full object-cover">
+      <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg" class="rounded-lg h-48 w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Fashion Runway -->
+<section id="runway" class="py-20 px-6 md:px-20 bg-black">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gold mb-4">Fashion Runway</h2>
+      <p class="text-gray-300 mb-6">
+        Professional runway modeling for fashion shows and live events. Models trained in poise, style, and presentation to create unforgettable visual impact.
+      </p>
+      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#runway-more">Learn More & Apply</button>
+      <div id="runway-more" class="hidden text-gray-300 mt-4">
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Runway training for posture, walk, and presentation.</li>
+          <li>Participation in fashion shows locally and internationally.</li>
+          <li>Guidance on styling, outfit coordination, and stage presence.</li>
+          <li>Video recording and reels for agency promotion.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="md:w-1/2 grid grid-cols-2 gap-2">
+      <img src="https://images.pexels.com/photos/1759330/pexels-photo-1759330.jpeg" class="rounded-lg h-48 w-full object-cover">
+      <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" class="rounded-lg h-48 w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Professional Photoshoot -->
+<section id="photoshoot" class="py-20 px-6 md:px-20 bg-gray-900">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gold mb-4">Professional Modeling Photoshoot</h2>
+      <p class="text-gray-300 mb-6">
+        High-quality photoshoots for portfolios, campaigns, and digital media. Our team ensures every shot captures style, emotion, and branding excellence.
+      </p>
+      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#photoshoot-more">Learn More & Apply</button>
+      <div id="photoshoot-more" class="hidden text-gray-300 mt-4">
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Studio and outdoor photoshoots for versatile portfolio images.</li>
+          <li>Professional lighting, makeup, and styling support.</li>
+          <li>High-resolution photos for both print and digital campaigns.</li>
+          <li>Casting-ready images and reels for future opportunities.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="md:w-1/2 grid grid-cols-2 gap-2">
+      <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg" class="rounded-lg h-48 w-full object-cover">
+      <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg" class="rounded-lg h-48 w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Social Media & Brand Influence -->
+<section id="social" class="py-20 px-6 md:px-20 bg-black">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gold mb-4">Social Media Marketing & Brand Influence</h2>
+      <p class="text-gray-300 mb-6">
+        Expand your brand and personal influence through curated social media strategies, collaborations, and campaign integration.
+      </p>
+      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#social-more">Learn More & Apply</button>
+      <div id="social-more" class="hidden text-gray-300 mt-4">
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Grow social media presence with professional guidance.</li>
+          <li>Collaboration opportunities with brands and influencers.</li>
+          <li>Content strategy, engagement, and campaign tracking.</li>
+          <li>Personal branding for models and influencers.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="md:w-1/2 grid grid-cols-2 gap-2">
+      <img src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg" class="rounded-lg h-48 w-full object-cover">
+      <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" class="rounded-lg h-48 w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Performance Arts -->
+<section id="performance" class="py-20 px-6 md:px-20 bg-gray-900">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gold mb-4">Performance Arts (Voice, Drama & Film)</h2>
+      <p class="text-gray-300 mb-6">
+        Models trained in acting, voice over, and on-camera performance for film, commercial, and stage productions.
+      </p>
+      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#performance-more">Learn More & Apply</button>
+      <div id="performance-more" class="hidden text-gray-300 mt-4">
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Voice acting, drama, and on-camera training.</li>
+          <li>Preparation for TV, film, commercials, and theater.</li>
+          <li>Portfolio integration of performance reels.</li>
+          <li>Workshops with industry professionals.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="md:w-1/2 grid grid-cols-2 gap-2">
+      <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" class="rounded-lg h-48 w-full object-cover">
+      <img src="https://images.pexels.com/photos/1759330/pexels-photo-1759330.jpeg" class="rounded-lg h-48 w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Development -->
+<section id="portfolio" class="py-20 px-6 md:px-20 bg-black">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gold mb-4">Portfolio Development & Casting Reels</h2>
+      <p class="text-gray-300 mb-6">
+        Comprehensive portfolio creation including photoshoots, casting reels, and media-ready presentations to launch or elevate a modelling career.
+      </p>
+      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#portfolio-more">Learn More & Apply</button>
+      <div id="portfolio-more" class="hidden text-gray-300 mt-4">
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Professional portfolio creation with multiple concepts and styles.</li>
+          <li>Casting reels for acting and modeling opportunities.</li>
+          <li>High-quality images and videos for industry use.</li>
+          <li>Career guidance and promotion through agency channels.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="md:w-1/2 grid grid-cols-2 gap-2">
+      <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg" class="rounded-lg h-48 w-full object-cover">
+      <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg" class="rounded-lg h-48 w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400 py-10 px-6 text-center">
+  <p>&copy; 2025 Impilo Modelling Agency. All rights reserved.</p>
+</footer>
+
+<script>
+  const btn = document.getElementById('mobileBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+  // Learn more buttons toggle
+  $('.learn-btn').click(function() {
+    const target = $(this).data('target');
+    $(target).slideToggle();
+    $(this).text($(target).is(':visible') ? 'Hide Details' : 'Learn More & Apply');
+  });
+</script>
+
+</body>
+</html>
