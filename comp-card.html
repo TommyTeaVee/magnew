@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Model Comp Card | IMPILO Modelling Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.4/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#000000', secondary: '#ffffff', gold: '#d4af37' },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+    }
+    .comp-wrapper {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      background: radial-gradient(circle at top, #111827 0, #020617 60%);
+      border-radius: 1.5rem;
+      border: 1px solid #d4af37;
+      padding: 1.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+    .comp-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .comp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .comp-main-img {
+      border-radius: 1.25rem;
+      overflow: hidden;
+      border: 1px solid #d4af37;
+    }
+    .comp-main-img img {
+      width: 100%;
+      display: block;
+    }
+    .comp-thumbs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .comp-thumbs img {
+      width: 100%;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(212,175,55,0.5);
+    }
+    .comp-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #9ca3af;
+    }
+    .comp-value {
+      font-size: 0.9rem;
+      color: #f9fafb;
+    }
+    .comp-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      color: #d4af37;
+      margin-bottom: 0.2rem;
+    }
+    .comp-role {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+    .badge-tag {
+      border-radius: 9999px;
+      border: 1px solid #d4af37;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.75rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="comp-wrapper">
+    <!-- Top: Logo + Agency -->
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <img src="https://via.placeholder.com/60x60.png?text=Logo" alt="Impilo Logo"
+             class="w-10 h-10 rounded-full border border-[#d4af37]" />
+        <div>
+          <p class="text-xs text-gray-300 uppercase tracking-[0.18em]">Impilo Modelling Agency</p>
+          <h1 class="text-sm text-[#d4af37] font-semibold">Model Comp Card</h1>
+        </div>
+      </div>
+      <p class="text-xs text-gray-400 text-right">
+        bookings@impilo.com<br />
+        @impilomag
+      </p>
+    </div>
+
+    <div class="comp-grid">
+      <!-- Left: Main image + thumbnails -->
+      <div>
+        <div class="comp-main-img">
+          <!-- Replace for each model -->
+          <img src="https://via.placeholder.com/900x1200.png?text=Main+Portrait"
+               alt="Model portrait" />
+        </div>
+        <div class="comp-thumbs">
+          <img src="https://via.placeholder.com/400x550.png?text=Look+1" alt="Look 1" />
+          <img src="https://via.placeholder.com/400x550.png?text=Look+2" alt="Look 2" />
+          <img src="https://via.placeholder.com/400x550.png?text=Look+3" alt="Look 3" />
+        </div>
+      </div>
+
+      <!-- Right: Info -->
+      <div class="flex flex-col justify-between gap-4">
+        <div>
+          <h2 class="comp-name">Name Surname</h2>
+          <p class="comp-role">Fashion · Editorial · Commercial</p>
+        </div>
+
+        <!-- Measurements -->
+        <div class="grid grid-cols-2 gap-x-8 gap-y-3 text-sm mt-2">
+          <div>
+            <p class="comp-label">Height</p>
+            <p class="comp-value">175 cm</p>
+          </div>
+          <div>
+            <p class="comp-label">Dress / Jacket</p>
+            <p class="comp-value">32</p>
+          </div>
+          <div>
+            <p class="comp-label">Bust / Chest</p>
+            <p class="comp-value">84 cm</p>
+          </div>
+          <div>
+            <p class="comp-label">Waist</p>
+            <p class="comp-value">62 cm</p>
+          </div>
+          <div>
+            <p class="comp-label">Hips</p>
+            <p class="comp-value">90 cm</p>
+          </div>
+          <div>
+            <p class="comp-label">Shoe</p>
+            <p class="comp-value">5 (SA)</p>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="mt-2">
+          <p class="comp-label mb-1">Categories</p>
+          <div>
+            <span class="badge-tag">Runway</span>
+            <span class="badge-tag">Editorial</span>
+            <span class="badge-tag">Commercial</span>
+            <span class="badge-tag">Swimwear (tasteful)</span>
+            <span class="badge-tag">Beauty / Cosmetics</span>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="mt-2">
+          <p class="comp-label mb-1">Notes</p>
+          <p class="comp-value text-xs leading-relaxed">
+            Available for bookings in Johannesburg, Cape Town and Durban.
+            Comfortable with studio, location and runway work. Travel and campaign
+            bookings on request.
+          </p>
+        </div>
+
+        <!-- Footer contact -->
+        <div class="mt-4 text-xs text-gray-400 border-t border-gray-700 pt-3">
+          <p>For bookings and casting enquiries, contact Impilo Modelling Agency · bookings@impilo.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tip: print or save as PDF via browser print -->
+</body>
+</html>

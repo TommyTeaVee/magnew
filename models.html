@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Models | IMPILO Modelling Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.4/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#000000',
+            secondary: '#ffffff',
+            gold: '#d4af37',
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="bg-primary text-secondary font-body">
+  <!-- HEADER -->
+  <header class="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4 bg-black border-b border-gold sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <img src="https://via.placeholder.com/60x60.png?text=Logo" alt="Impilo Logo"
+           class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gold" />
+      <div>
+        <h1 class="text-xl sm:text-2xl font-heading text-gold leading-tight">IMPILO Modelling Agency</h1>
+        <p class="text-xs text-gray-300 hidden sm:block">Model Roster</p>
+      </div>
+    </div>
+
+    <a href="./index.html#modelling" class="text-xs sm:text-sm text-gold hover:underline">
+      Back to IMPILO
+    </a>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <section class="mb-8 text-center max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-heading text-gold mb-3">Our Models</h2>
+      <p class="text-sm sm:text-base text-gray-300">
+        A curated roster of fashion, editorial, commercial, beauty, swimwear and lifestyle models represented by IMPILO.
+      </p>
+    </section>
+
+    <!-- Filters -->
+    <section class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div class="w-full sm:w-1/2">
+        <label for="modelSearch" class="block text-xs text-gray-400 uppercase tracking-wide mb-1">
+          Search models
+        </label>
+        <input id="modelSearch" type="text" placeholder="Search by name or style..."
+               class="w-full px-3 py-2 rounded-md border border-gray-700 bg-black text-sm focus:outline-none focus:ring-1 focus:ring-gold" />
+      </div>
+
+      <div class="flex flex-wrap gap-2 text-xs sm:text-sm justify-start sm:justify-end">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="female">Female</button>
+        <button class="filter-chip" data-filter="male">Male</button>
+        <button class="filter-chip" data-filter="androgynous">Androgynous</button>
+        <button class="filter-chip" data-filter="commercial">Commercial</button>
+        <button class="filter-chip" data-filter="editorial">Editorial</button>
+        <button class="filter-chip" data-filter="runway">Runway</button>
+      </div>
+    </section>
+<p class="text-xs text-gray-400 text-center mb-4">
+  Looking for male / androgynous talent only?
+  <a href="./models-men.html" class="text-gold underline">View guys roster</a>
+</p>
+    <!-- Grid -->
+    <section aria-label="Model grid">
+      <div id="modelGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <article class="model-card"
+                 data-gender="female"
+                 data-tags="fashion editorial swimwear beauty"
+                 data-name="Anele M">
+         <a href="./model-anele.html" class="block"></a>
+            <div class="model-img-wrapper">
+              <img src="https://via.placeholder.com/900x1200.png?text=Anele+M"
+                   alt="Model Anele M" loading="lazy" />
+            </div>
+            <div class="model-body">
+              <h3 class="model-name">Anele M</h3>
+              <p class="model-meta">Female · Editorial · Swimwear · Beauty</p>
+              <p class="model-location">Johannesburg · South Africa</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="model-card"
+                 data-gender="male"
+                 data-tags="runway streetwear sportswear"
+                 data-name="Lebo K">
+          <a href="./model-portfolio.html" class="block">
+            <div class="model-img-wrapper">
+              <img src="https://via.placeholder.com/900x1200.png?text=Lebo+K"
+                   alt="Model Lebo K" loading="lazy" />
+            </div>
+            <div class="model-body">
+              <h3 class="model-name">Lebo K</h3>
+              <p class="model-meta">Male · Runway · Streetwear · Sportswear</p>
+              <p class="model-location">Johannesburg · South Africa</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="model-card"
+                 data-gender="female"
+                 data-tags="commercial cosmetics lingerie"
+                 data-name="Naledi S">
+          <a href="./model-portfolio.html" class="block">
+            <div class="model-img-wrapper">
+              <img src="https://via.placeholder.com/900x1200.png?text=Naledi+S"
+                   alt="Model Naledi S" loading="lazy" />
+            </div>
+            <div class="model-body">
+              <h3 class="model-name">Naledi S</h3>
+              <p class="model-meta">Female · Commercial · Beauty · Lingerie (tasteful)</p>
+              <p class="model-location">Cape Town · South Africa</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="model-card"
+                 data-gender="androgynous"
+                 data-tags="streetwear editorial fashion"
+                 data-name="Kai J">
+          <a href="./model-portfolio.html" class="block">
+            <div class="model-img-wrapper">
+              <img src="https://via.placeholder.com/900x1200.png?text=Kai+J"
+                   alt="Model Kai J" loading="lazy" />
+            </div>
+            <div class="model-body">
+              <h3 class="model-name">Kai J</h3>
+              <p class="model-meta">Androgynous · Streetwear · Editorial</p>
+              <p class="model-location">Durban · South Africa</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="model-card"
+                 data-gender="female"
+                 data-tags="runway fashion summer swimwear"
+                 data-name="Thando P">
+          <a href="./model-portfolio.html" class="block">
+            <div class="model-img-wrapper">
+              <img src="https://via.placeholder.com/900x1200.png?text=Thando+P"
+                   alt="Model Thando P" loading="lazy" />
+            </div>
+            <div class="model-body">
+              <h3 class="model-name">Thando P</h3>
+              <p class="model-meta">Female · Runway · Summer · Swimwear</p>
+              <p class="model-location">Johannesburg · South Africa</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="model-card"
+                 data-gender="male"
+                 data-tags="commercial sportswear fashion"
+                 data-name="Sizwe L">
+          <a href="./model-portfolio.html" class="block">
+            <div class="model-img-wrapper">
+              <img src="https://via.placeholder.com/900x1200.png?text=Sizwe+L"
+                   alt="Model Sizwe L" loading="lazy" />
+            </div>
+            <div class="model-body">
+              <h3 class="model-name">Sizwe L</h3>
+              <p class="model-meta">Male · Commercial · Sportswear · Fashion</p>
+              <p class="model-location">Pretoria · South Africa</p>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="mt-12 border-t border-gold pt-6 text-xs text-gray-400 flex flex-col sm:flex-row justify-between gap-2">
+      <p>&copy; 2025 IMPILO Modelling Agency · Part of Impilo Digital Media Group.</p>
+      <a href="./privacy.html" class="underline hover:text-gold">Privacy & Ad Policy</a>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
