@@ -1,214 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impilo Modelling Agency</title>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<style>
-  .text-gold { color: #FFD700; }
-</style>
+  <meta charset="UTF-8" />
+  <title>Impilo Modelling Agency | IMPILO Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Impilo Modelling Agency – runway, editorial, commercial, performance and portfolio development powered by Impilo Digital Media Group and IMPILO Magazine."
+  />
+
+  <!-- Tailwind + DaisyUI base -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.4/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#000000",
+            secondary: "#ffffff",
+            gold: "#d4af37",
+          },
+          fontFamily: {
+            heading: ["Playfair Display", "serif"],
+            body: ["Montserrat", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+
+  <!-- jQuery (for learn-more toggles) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-primary text-secondary font-body">
+  <!-- =========================
+       HEADER (MATCHES INDEX)
+  ========================== -->
+  <header
+    class="flex items-center justify-between px-4 sm:px-6 lg:px-16 py-4 bg-black border-b border-gold sticky top-0 z-50"
+  >
+    <a href="index.html#home" class="flex items-center gap-3">
+      <img
+        src="https://impilomag.co.za/media/impilo_logo.png"
+        alt="IMPILO Magazine logo"
+        class="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+      />
+      <div class="leading-tight">
+        <h1 class="text-xl sm:text-2xl font-heading text-gold">
+          IMPILO Magazine
+        </h1>
+        <p class="text-[11px] sm:text-xs text-gray-300 uppercase tracking-[0.18em]">
+          Impilo Modelling Agency
+        </p>
+      </div>
+    </a>
 
-<!-- Header -->
-<header class="bg-black text-gold p-6 flex justify-between items-center border-b border-gold sticky top-0 z-50">
-  <h1 class="text-2xl font-bold">Impilo Modelling Agency</h1>
-  <nav class="hidden md:flex gap-6 font-semibold">
-    <a href="#editorial" class="hover:text-white">Editorial & Commercial</a>
-    <a href="#runway" class="hover:text-white">Fashion Runway</a>
-    <a href="#photoshoot" class="hover:text-white">Professional Photoshoot</a>
-    <a href="#social" class="hover:text-white">Social Media</a>
-    <a href="#performance" class="hover:text-white">Performance Arts</a>
-    <a href="#portfolio" class="hover:text-white">Portfolio Development</a>
-  </nav>
-  <button id="mobileBtn" class="md:hidden text-gold text-2xl"><i class="fas fa-bars"></i></button>
-</header>
+    <!-- Desktop nav -->
+    <nav
+      id="mainNav"
+      class="hidden md:flex gap-5 lg:gap-7 text-xs sm:text-sm font-medium"
+    >
+      <a href="index.html#home" class="hover:text-gold transition">Home</a>
+      <a href="index.html#services" class="hover:text-gold transition">Services</a>
+      <a href="index.html#jozi-fashion" class="hover:text-gold transition">Jozi Fashion</a>
+      <a href="#top" class="text-gold transition">Modelling</a>
+      <a href="index.html#streaming" class="hover:text-gold transition">Streaming</a>
+      <a href="catalogue.html" class="hover:text-gold transition">Catalogue</a>
+      <a href="index.html#subscribe" class="hover:text-gold transition">Subscribe</a>
+    </nav>
 
-<!-- Mobile Menu -->
-<div id="mobileMenu" class="hidden flex-col bg-black p-6 border-b border-gold md:hidden">
-  <a href="#editorial" class="py-2 hover:text-gold">Editorial & Commercial</a>
-  <a href="#runway" class="py-2 hover:text-gold">Fashion Runway</a>
-  <a href="#photoshoot" class="py-2 hover:text-gold">Professional Photoshoot</a>
-  <a href="#social" class="py-2 hover:text-gold">Social Media</a>
-  <a href="#performance" class="py-2 hover:text-gold">Performance Arts</a>
-  <a href="#portfolio" class="py-2 hover:text-gold">Portfolio Development</a>
-</div>
+    <!-- Mobile nav button -->
+    <button
+      id="mobileMenuBtn"
+      class="md:hidden text-gold text-2xl"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
 
-<!-- Section Template Function -->
-<!-- Each section includes: Title, Description, Model Images, Expandable Detailed Description -->
+  <!-- Mobile Menu -->
+  <div
+    id="mobileMenu"
+    class="hidden flex-col bg-black text-secondary p-5 border-b border-gold md:hidden"
+  >
+    <a href="index.html#home" class="py-2 hover:text-gold transition">Home</a>
+    <a href="index.html#services" class="py-2 hover:text-gold transition">Services</a>
+    <a href="index.html#jozi-fashion" class="py-2 hover:text-gold transition">Jozi Fashion</a>
+    <a href="#top" class="py-2 text-gold hover:text-gold transition">Modelling</a>
+    <a href="index.html#streaming" class="py-2 hover:text-gold transition">Streaming</a>
+    <a href="catalogue.html" class="py-2 hover:text-gold transition">Catalogue</a>
+    <a href="index.html#subscribe" class="py-2 hover:text-gold transition">Subscribe</a>
+  </div>
 
-<!-- Editorial & Commercial -->
-<section id="editorial" class="py-20 px-6 md:px-20 bg-gray-900">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl font-bold text-gold mb-4">Editorial & Commercial Modeling</h2>
-      <p class="text-gray-300 mb-6">
-        Our editorial and commercial modeling service ensures professional representation for campaigns, magazines, and brand promotions. Models embody style, poise, and brand narrative seamlessly.
+  <!-- =========================
+       MAIN
+  ========================== -->
+  <main id="top" class="min-h-screen">
+    <!-- HERO / INTRO -->
+    <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-black via-zinc-900 to-black">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 grid gap-10 lg:grid-cols-[1.3fr,1fr] items-center">
+        <div class="space-y-4">
+          <p class="text-xs uppercase tracking-[0.24em] text-gray-400">
+            Impilo Modelling Agency
+          </p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading text-gold">
+            Runway, Editorial &amp;<br class="hidden sm:block" /> Performance Talent
+          </h2>
+          <p class="text-sm sm:text-base text-gray-200 max-w-xl">
+            We develop models, performers and creatives for runway, editorial, commercial campaigns,
+            digital media and stage. Powered by Impilo Digital Media Group and IMPILO Magazine.
+          </p>
+          <p class="text-xs sm:text-sm text-gray-400 max-w-xl">
+            From your first portfolio shoot to your first runway and on-camera role – our agency
+            guides you every step with training, professional shoots and media exposure.
+          </p>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a
+              href="models.html"
+              class="btn bg-gold text-black border-none hover:bg-white hover:text-black px-5"
+            >
+              View Model Portfolios
+            </a>
+            <a
+              href="mailto:agency@impilomag.co.za?subject=Impilo%20Modelling%20Agency%20Application"
+              class="btn bg-transparent border border-gold text-gold hover:bg-gold hover:text-black px-5"
+            >
+              Apply to Join
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-gold/80 bg-black shadow-2xl overflow-hidden">
+          <div class="grid grid-cols-2 gap-1 p-1">
+            <img
+              src="https://images.pexels.com/photos/1759330/pexels-photo-1759330.jpeg"
+              alt="Runway model"
+              class="h-40 w-full object-cover rounded-xl"
+              loading="lazy"
+            />
+            <img
+              src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
+              alt="Backstage fashion"
+              class="h-40 w-full object-cover rounded-xl"
+              loading="lazy"
+            />
+            <img
+              src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg"
+              alt="Studio editorial"
+              class="h-40 w-full object-cover rounded-xl"
+              loading="lazy"
+            />
+            <img
+              src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg"
+              alt="Social content creation"
+              class="h-40 w-full object-cover rounded-xl"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK SECTION NAV -->
+    <section class="bg-black border-y border-gold/30 py-4">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 flex flex-wrap gap-2 text-xs sm:text-sm">
+        <span class="text-gray-400 mr-2">Sections:</span>
+        <a href="#editorial" class="filter-chip">Editorial &amp; Commercial</a>
+        <a href="#runway" class="filter-chip">Fashion Runway</a>
+        <a href="#photoshoot" class="filter-chip">Professional Photoshoot</a>
+        <a href="#social" class="filter-chip">Social Media</a>
+        <a href="#performance" class="filter-chip">Performance Arts</a>
+        <a href="#portfolio" class="filter-chip">Portfolio Development</a>
+      </div>
+    </section>
+
+    <!-- Editorial & Commercial -->
+    <section id="editorial" class="py-16 px-4 sm:px-6 lg:px-16 bg-gray-900 border-b border-gold/20">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-heading text-gold mb-4">Editorial &amp; Commercial Modeling</h2>
+          <p class="text-sm sm:text-base text-gray-300 mb-4">
+            Our editorial and commercial division represents models for campaigns, magazines,
+            digital ads and branded content. Talent is trained to embody story, style and brand
+            identity with confidence and professionalism.
+          </p>
+          <button
+            class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4 text-sm"
+            data-target="#editorial-more"
+          >
+            Learn More &amp; Apply
+          </button>
+          <div id="editorial-more" class="hidden text-sm text-gray-300 mt-2">
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Full editorial photoshoots for magazines, lookbooks and digital campaigns.</li>
+              <li>Commercial modeling for advertisements, OOH and online platforms.</li>
+              <li>On-set coaching for posing, expression and movement.</li>
+              <li>Portfolio-ready images aligned to industry standards.</li>
+            </ul>
+            <p class="mt-3 text-xs text-gray-400">
+              To apply, send a simple headshot, full-length photo and short introduction to
+              <span class="text-gold">agency@impilomag.co.za</span>.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-2 gap-2">
+          <img
+            src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Editorial shoot"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Commercial lifestyle shoot"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Beauty close-up"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Studio fashion portrait"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Fashion Runway -->
+    <section id="runway" class="py-16 px-4 sm:px-6 lg:px-16 bg-black border-b border-gold/20">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-heading text-gold mb-4">Fashion Runway</h2>
+          <p class="text-sm sm:text-base text-gray-300 mb-4">
+            Professional runway training and casting for fashion shows and live events, including
+            the Exclusive Jozi Fashion Runway. We focus on walk, presence, styling and stage
+            discipline.
+          </p>
+          <button
+            class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4 text-sm"
+            data-target="#runway-more"
+          >
+            Learn More &amp; Apply
+          </button>
+          <div id="runway-more" class="hidden text-sm text-gray-300 mt-2">
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Runway coaching: walk, turns, posture and timing with music.</li>
+              <li>Participation in local fashion shows and Jozi Fashion Runway.</li>
+              <li>Guidance on styling, fittings and backstage professionalism.</li>
+              <li>Runway photos and clips for your portfolio and social media.</li>
+            </ul>
+            <p class="mt-3 text-xs text-gray-400">
+              Shortlisted models may be invited to walk at the Exclusive Jozi Fashion Runway in
+              partnership with designers and IMPILO.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-2 gap-2">
+          <img
+            src="https://images.pexels.com/photos/1759330/pexels-photo-1759330.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Runway model on catwalk"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Models backstage"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Photoshoot -->
+    <section id="photoshoot" class="py-16 px-4 sm:px-6 lg:px-16 bg-gray-900 border-b border-gold/20">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-heading text-gold mb-4">Professional Modeling Photoshoot</h2>
+          <p class="text-sm sm:text-base text-gray-300 mb-4">
+            High-quality studio and location shoots designed to build or update your portfolio.
+            We focus on clean, agency-ready images that reflect your range and personality.
+          </p>
+          <button
+            class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4 text-sm"
+            data-target="#photoshoot-more"
+          >
+            Learn More &amp; Apply
+          </button>
+          <div id="photoshoot-more" class="hidden text-sm text-gray-300 mt-2">
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Studio and outdoor sessions with professional lighting.</li>
+              <li>Beauty, fashion, lifestyle and character looks in one package.</li>
+              <li>Images edited for comp cards, social media and casting profiles.</li>
+              <li>Optional hair, makeup and styling add-ons.</li>
+            </ul>
+            <p class="mt-3 text-xs text-gray-400">
+              Sessions are available for new faces and working models; rates are shared once your
+              application is reviewed.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-2 gap-2">
+          <img
+            src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Studio portrait lighting"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Beauty and fashion shoot"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media & Brand Influence -->
+    <section id="social" class="py-16 px-4 sm:px-6 lg:px-16 bg-black border-b border-gold/20">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-heading text-gold mb-4">Social Media &amp; Brand Influence</h2>
+          <p class="text-sm sm:text-base text-gray-300 mb-4">
+            We help models and creatives build authentic, professional social media presence,
+            aligned with brand partnerships and long-term career goals.
+          </p>
+          <button
+            class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4 text-sm"
+            data-target="#social-more"
+          >
+            Learn More &amp; Apply
+          </button>
+          <div id="social-more" class="hidden text-sm text-gray-300 mt-2">
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Profile review and content strategy for Instagram, TikTok and more.</li>
+              <li>Guidance on brand collaborations and sponsored content.</li>
+              <li>Content planning for shoots, reels and behind-the-scenes.</li>
+              <li>Connection with IMPILO Streaming and podcast platforms.</li>
+            </ul>
+            <p class="mt-3 text-xs text-gray-400">
+              We focus on long-term brand building, not just quick trends – especially for models
+              appearing in IMPILO and our digital shows.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-2 gap-2">
+          <img
+            src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Influencer using phone"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Social content creation"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Arts -->
+    <section id="performance" class="py-16 px-4 sm:px-6 lg:px-16 bg-gray-900 border-b border-gold/20">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-heading text-gold mb-4">Performance Arts (Voice, Drama &amp; Film)</h2>
+          <p class="text-sm sm:text-base text-gray-300 mb-4">
+            Some models are also performers. We provide a path for those interested in acting,
+            voice work and on-camera performance for film, commercial and stage.
+          </p>
+          <button
+            class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4 text-sm"
+            data-target="#performance-more"
+          >
+            Learn More &amp; Apply
+          </button>
+          <div id="performance-more" class="hidden text-sm text-gray-300 mt-2">
+            <ul class="list-disc pl-5 space-y-2">
+              <li>On-camera training for commercials and digital content.</li>
+              <li>Intro to acting, script reading and character work.</li>
+              <li>Voice-over basics for narration and advertising.</li>
+              <li>Showreel guidance and integration with portfolio.</li>
+            </ul>
+            <p class="mt-3 text-xs text-gray-400">
+              Ideal for multi-talented creatives who want to combine modeling with drama, voice
+              and film opportunities.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-2 gap-2">
+          <img
+            src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Theatre or performance arts"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/1759330/pexels-photo-1759330.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Runway and stage lighting"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Development -->
+    <section id="portfolio" class="py-16 px-4 sm:px-6 lg:px-16 bg-black">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-heading text-gold mb-4">Portfolio Development &amp; Casting Reels</h2>
+          <p class="text-sm sm:text-base text-gray-300 mb-4">
+            We design complete portfolios: from images and comp cards to video reels that show your
+            walk, movement and presence on camera.
+          </p>
+          <button
+            class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4 text-sm"
+            data-target="#portfolio-more"
+          >
+            Learn More &amp; Apply
+          </button>
+          <div id="portfolio-more" class="hidden text-sm text-gray-300 mt-2">
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Concept planning for portfolio (fashion, lifestyle, beauty and more).</li>
+              <li>Casting reels to show walk, turns and personality.</li>
+              <li>Digital comp cards for agencies, clients and castings.</li>
+              <li>Guidance on updating your portfolio annually.</li>
+            </ul>
+            <p class="mt-3 text-xs text-gray-400">
+              We aim for long-term growth – building materials that help you step into local and
+              international opportunities.
+            </p>
+          </div>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-2 gap-2">
+          <img
+            src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Portfolio beauty shot"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg"
+            class="rounded-lg h-48 w-full object-cover"
+            alt="Fashion portrait in portfolio"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-12 bg-gold text-black border-t border-black/20 text-center">
+      <div class="max-w-3xl mx-auto px-4">
+        <h3 class="text-2xl sm:text-3xl font-heading mb-2">
+          Ready to Take the Next Step?
+        </h3>
+        <p class="text-sm sm:text-base mb-4">
+          Send your details to <span class="font-semibold">agency@impilomag.co.za</span> with
+          subject line <span class="font-semibold">“Impilo Agency Application”</span>.
+          Include your age, city, a headshot and full-length photo.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="mailto:agency@impilomag.co.za?subject=Impilo%20Agency%20Application"
+            class="btn bg-black text-gold border border-black hover:bg-white hover:text-black px-6"
+          >
+            Apply via Email
+          </a>
+          <a
+            href="models.html"
+            class="btn bg-transparent border border-black text-black hover:bg-black hover:text-gold px-6"
+          >
+            View Current Models
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="bg-black border-t border-gold py-10 text-center">
+    <div class="flex flex-col items-center gap-3">
+      <img
+        src="https://impilomag.co.za/media/impilo_logo.png"
+        alt="IMPILO Magazine logo"
+        class="w-14 h-14 object-contain"
+      />
+      <h3 class="text-gold font-heading text-xl">Impilo Digital Media Group</h3>
+      <p class="text-xs text-gray-400">
+        &copy; 2025 Impilo Modelling Agency · IMPILO Magazine. All rights reserved.
       </p>
-      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#editorial-more">Learn More & Apply</button>
-      <div id="editorial-more" class="hidden text-gray-300 mt-4">
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Full editorial photoshoots for magazines, lookbooks, and brand campaigns.</li>
-          <li>Commercial modeling for advertisements, TV, and online media.</li>
-          <li>Professional guidance on styling, poses, and brand storytelling.</li>
-          <li>Portfolio-ready images to boost career opportunities.</li>
-        </ul>
+
+      <nav class="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-300">
+        <a href="index.html#home" class="hover:text-gold transition">Home</a>
+        <a href="index.html#jozi-fashion" class="hover:text-gold transition">Jozi Fashion</a>
+        <a href="#top" class="text-gold transition">Modelling</a>
+        <a href="index.html#streaming" class="hover:text-gold transition">Streaming</a>
+        <a href="catalogue.html" class="hover:text-gold transition">Catalogue</a>
+        <a href="index.html#subscribe" class="hover:text-gold transition">Subscribe</a>
+        <a href="privacy.html" class="hover:text-gold transition">Privacy &amp; Ad Policy</a>
+      </nav>
+
+      <div class="flex gap-5 mt-4 text-lg text-gold">
+        <a href="https://facebook.com/impilomag" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/impilomag" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/impilomag" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/@impilomag" target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
-    <div class="md:w-1/2 grid grid-cols-2 gap-2">
-      <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" class="rounded-lg h-48 w-full object-cover">
-      <img src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg" class="rounded-lg h-48 w-full object-cover">
-      <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg" class="rounded-lg h-48 w-full object-cover">
-      <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg" class="rounded-lg h-48 w-full object-cover">
-    </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Fashion Runway -->
-<section id="runway" class="py-20 px-6 md:px-20 bg-black">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl font-bold text-gold mb-4">Fashion Runway</h2>
-      <p class="text-gray-300 mb-6">
-        Professional runway modeling for fashion shows and live events. Models trained in poise, style, and presentation to create unforgettable visual impact.
-      </p>
-      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#runway-more">Learn More & Apply</button>
-      <div id="runway-more" class="hidden text-gray-300 mt-4">
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Runway training for posture, walk, and presentation.</li>
-          <li>Participation in fashion shows locally and internationally.</li>
-          <li>Guidance on styling, outfit coordination, and stage presence.</li>
-          <li>Video recording and reels for agency promotion.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="md:w-1/2 grid grid-cols-2 gap-2">
-      <img src="https://images.pexels.com/photos/1759330/pexels-photo-1759330.jpeg" class="rounded-lg h-48 w-full object-cover">
-      <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" class="rounded-lg h-48 w-full object-cover">
-    </div>
-  </div>
-</section>
+  <!-- SHARED SCRIPT (mobile menu, etc.) -->
+  <script src="./script.js"></script>
 
-<!-- Professional Photoshoot -->
-<section id="photoshoot" class="py-20 px-6 md:px-20 bg-gray-900">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl font-bold text-gold mb-4">Professional Modeling Photoshoot</h2>
-      <p class="text-gray-300 mb-6">
-        High-quality photoshoots for portfolios, campaigns, and digital media. Our team ensures every shot captures style, emotion, and branding excellence.
-      </p>
-      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#photoshoot-more">Learn More & Apply</button>
-      <div id="photoshoot-more" class="hidden text-gray-300 mt-4">
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Studio and outdoor photoshoots for versatile portfolio images.</li>
-          <li>Professional lighting, makeup, and styling support.</li>
-          <li>High-resolution photos for both print and digital campaigns.</li>
-          <li>Casting-ready images and reels for future opportunities.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="md:w-1/2 grid grid-cols-2 gap-2">
-      <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg" class="rounded-lg h-48 w-full object-cover">
-      <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg" class="rounded-lg h-48 w-full object-cover">
-    </div>
-  </div>
-</section>
-
-<!-- Social Media & Brand Influence -->
-<section id="social" class="py-20 px-6 md:px-20 bg-black">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl font-bold text-gold mb-4">Social Media Marketing & Brand Influence</h2>
-      <p class="text-gray-300 mb-6">
-        Expand your brand and personal influence through curated social media strategies, collaborations, and campaign integration.
-      </p>
-      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#social-more">Learn More & Apply</button>
-      <div id="social-more" class="hidden text-gray-300 mt-4">
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Grow social media presence with professional guidance.</li>
-          <li>Collaboration opportunities with brands and influencers.</li>
-          <li>Content strategy, engagement, and campaign tracking.</li>
-          <li>Personal branding for models and influencers.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="md:w-1/2 grid grid-cols-2 gap-2">
-      <img src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg" class="rounded-lg h-48 w-full object-cover">
-      <img src="https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg" class="rounded-lg h-48 w-full object-cover">
-    </div>
-  </div>
-</section>
-
-<!-- Performance Arts -->
-<section id="performance" class="py-20 px-6 md:px-20 bg-gray-900">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl font-bold text-gold mb-4">Performance Arts (Voice, Drama & Film)</h2>
-      <p class="text-gray-300 mb-6">
-        Models trained in acting, voice over, and on-camera performance for film, commercial, and stage productions.
-      </p>
-      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#performance-more">Learn More & Apply</button>
-      <div id="performance-more" class="hidden text-gray-300 mt-4">
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Voice acting, drama, and on-camera training.</li>
-          <li>Preparation for TV, film, commercials, and theater.</li>
-          <li>Portfolio integration of performance reels.</li>
-          <li>Workshops with industry professionals.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="md:w-1/2 grid grid-cols-2 gap-2">
-      <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" class="rounded-lg h-48 w-full object-cover">
-      <img src="https://images.pexels.com/photos/1759330/pexels-photo-1759330.jpeg" class="rounded-lg h-48 w-full object-cover">
-    </div>
-  </div>
-</section>
-
-<!-- Portfolio Development -->
-<section id="portfolio" class="py-20 px-6 md:px-20 bg-black">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl font-bold text-gold mb-4">Portfolio Development & Casting Reels</h2>
-      <p class="text-gray-300 mb-6">
-        Comprehensive portfolio creation including photoshoots, casting reels, and media-ready presentations to launch or elevate a modelling career.
-      </p>
-      <button class="learn-btn bg-gold text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-gold transition mb-4" data-target="#portfolio-more">Learn More & Apply</button>
-      <div id="portfolio-more" class="hidden text-gray-300 mt-4">
-        <ul class="list-disc pl-5 space-y-2">
-          <li>Professional portfolio creation with multiple concepts and styles.</li>
-          <li>Casting reels for acting and modeling opportunities.</li>
-          <li>High-quality images and videos for industry use.</li>
-          <li>Career guidance and promotion through agency channels.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="md:w-1/2 grid grid-cols-2 gap-2">
-      <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg" class="rounded-lg h-48 w-full object-cover">
-      <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg" class="rounded-lg h-48 w-full object-cover">
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-400 py-10 px-6 text-center">
-  <p>&copy; 2025 Impilo Modelling Agency. All rights reserved.</p>
-</footer>
-
-<script>
-  const btn = document.getElementById('mobileBtn');
-  const menu = document.getElementById('mobileMenu');
-  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-
-  // Learn more buttons toggle
-  $('.learn-btn').click(function() {
-    const target = $(this).data('target');
-    $(target).slideToggle();
-    $(this).text($(target).is(':visible') ? 'Hide Details' : 'Learn More & Apply');
-  });
-</script>
-
+  <!-- Learn more buttons toggle (specific to this page) -->
+  <script>
+    $(".learn-btn").on("click", function () {
+      const target = $(this).data("target");
+      $(target).slideToggle(200);
+      const $btn = $(this);
+      const isVisible = $(target).is(":visible");
+      $btn.text(isVisible ? "Hide Details" : "Learn More & Apply");
+    });
+  </script>
 </body>
 </html>
+

@@ -1,802 +1,556 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>IMPILO Magazine | The Heartbeat of Creativity</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="IMPILO Magazine – fashion, lifestyle, culture and business from Jozi streets to global runways. Explore Jozi Fashion Runway, Impilo Modelling Agency, streaming and the Impilo Catalogue."
-  />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- DaisyUI + Tailwind -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/daisyui@4.0.4/dist/full.min.css"
-    rel="stylesheet"
-    type="text/css"
-  />
+  <meta charset="UTF-8">
+  <title>IMPILO Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="./site.webmanifest">
+  <!-- Tailwind & DaisyUI -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.4/dist/full.min.css" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: "#000000",
-            secondary: "#ffffff",
-            gold: "#d4af37",
+            'primary': '#000000',
+            'secondary': '#ffffff',
+            'gold': '#d4af37',
+            'overlay': 'rgba(0,0,0,0.6)',
           },
           fontFamily: {
-            heading: ["Playfair Display", "serif"],
-            body: ["Montserrat", "sans-serif"],
+            heading: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif']
           },
-        },
-      },
-    };
+          boxShadow: {
+          goldGlow: "0 0 20px rgba(255, 215, 0, 0.6)",
+  }
+
+        }
+      }
+    }
   </script>
 
   <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
   <!-- Owl Carousel CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
-  <!-- Your custom styles -->
-  <link rel="stylesheet" href="./style.css" />
+  <!-- Flipster CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/drien/jquery-flipster/dist/jquery.flipster.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- jQuery (must be before Flipster & OwlCarousel) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Flipster JS -->
+  <script src="https://cdn.jsdelivr.net/gh/drien/jquery-flipster/dist/jquery.flipster.min.js"></script>
+
+  <!-- OwlCarousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- COOKIE CONSENT MODAL -->
+<div id="cookieConsentModal" class="cookie-modal">
+  <div class="cookie-box">
+    <h3>We respect your privacy 🍪</h3>
+    <p>
+      Impilo Digital Media uses cookies to enhance your experience and deliver responsible advertising through digital, affiliations and partnerships.
+      You can manage or withdraw consent at any time.
+    </p>
+
+    <div class="cookie-actions">
+      <button id="acceptAllBtn" class="btn-accept">Accept All</button>
+      <button id="rejectBtn" class="btn-reject">Reject</button>
+    </div>
+
+    <div class="cookie-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span>|</span>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <span>|</span>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const storageKey = "impilo-cookie-consent";
+  const modal = document.getElementById("cookieConsentModal");
+  const acceptBtn = document.getElementById("acceptAllBtn");
+  const rejectBtn = document.getElementById("rejectBtn");
+
+  // Show if not yet answered
+  if (!localStorage.getItem(storageKey)) {
+    modal.style.display = "block";
+  } else {
+    modal.style.display = "none";
+  }
+
+  // Accept cookies
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem(storageKey, "accepted");
+    modal.style.display = "none";
+  });
+
+  // Reject cookies
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem(storageKey, "rejected");
+    modal.style.display = "none";
+  });
+});
+</script>
 </head>
 <body class="bg-primary text-secondary font-body">
-  <!-- =========================
-       HEADER
-  ========================== -->
-  <header
-    class="flex items-center justify-between px-4 sm:px-6 lg:px-16 py-4 bg-black border-b border-gold sticky top-0 z-50"
-  >
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4 bg-black border-b border-gold sticky top-0 z-50">
     <a href="#home" class="flex items-center gap-3">
-      <img
-        src="https://impilomag.co.za/media/impilo_logo.png"
-        alt="IMPILO Magazine logo"
-        class="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-      />
+      <img src="./media/impilo_logo.png" width="60" height="60" alt="IMPILO Logo">
       <div class="leading-tight">
-        <h1 class="text-xl sm:text-2xl font-heading text-gold">
-          IMPILO Magazine
-        </h1>
+        <h1 class="text-xl sm:text-2xl font-heading text-gold">IMPILO Magazine</h1>
         <p class="text-[11px] sm:text-xs text-gray-300 uppercase tracking-[0.18em]">
-          The Heartbeat of Creativity
+          Impilo Digital Media Group
         </p>
       </div>
     </a>
+    <!-- Toast Notification Container -->
+<div id="toastContainer" class="fixed top-6 right-6 z-50 flex flex-col gap-3"></div>
 
-    <!-- Desktop nav (no Issues here) -->
-    <nav
-      id="mainNav"
-      class="hidden md:flex gap-5 lg:gap-7 text-xs sm:text-sm font-medium"
-    >
+    <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl"><i class="fas fa-bars"></i></button>
+    <nav id="mainNav" class="hidden md:flex gap-4 lg:gap-6 text-secondary font-semibold text-sm lg:text-base">
       <a href="#home" class="hover:text-gold transition">Home</a>
       <a href="#services" class="hover:text-gold transition">Services</a>
       <a href="#jozi-fashion" class="hover:text-gold transition">Jozi Fashion</a>
-      <a href="#modelling" class="hover:text-gold transition">Modelling</a>
+      <a href="./ita.html" class="hover:text-gold transition">Modelling</a>
       <a href="#streaming" class="hover:text-gold transition">Streaming</a>
-      <a href="catalogue.html" class="hover:text-gold transition">Catalogue</a>
+      <a href="./catalogue.html" class="hover:text-gold transition">Catalogue</a>
       <a href="#subscribe" class="hover:text-gold transition">Subscribe</a>
     </nav>
+   
 
-    <!-- Mobile nav button -->
-    <button
-      id="mobileMenuBtn"
-      class="md:hidden text-gold text-2xl"
-      aria-label="Toggle navigation"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
+
   </header>
 
-  <!-- Mobile Menu (no Issues link) -->
-  <div
-    id="mobileMenu"
-    class="hidden flex-col bg-black text-secondary p-5 border-b border-gold md:hidden"
-  >
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden flex-col bg-black text-secondary p-6 border-b border-gold md:hidden space-y-2">
     <a href="#home" class="py-2 hover:text-gold transition">Home</a>
     <a href="#services" class="py-2 hover:text-gold transition">Services</a>
     <a href="#jozi-fashion" class="py-2 hover:text-gold transition">Jozi Fashion</a>
-    <a href="#modelling" class="py-2 hover:text-gold transition">Modelling</a>
+    <a href="./ita.html" class="py-2 hover:text-gold transition">Modelling</a>
     <a href="#streaming" class="py-2 hover:text-gold transition">Streaming</a>
-    <a href="catalogue.html" class="py-2 hover:text-gold transition">Catalogue</a>
+    <a href="./catalogue.html" class="py-2 hover:text-gold transition">Catalogue</a>
     <a href="#subscribe" class="py-2 hover:text-gold transition">Subscribe</a>
   </div>
 
-  <!-- =========================
-       MAIN
-  ========================== -->
-  <main id="home">
-    <!-- HERO / LATEST ISSUE -->
-    <section
-      class="relative overflow-hidden bg-gradient-to-b from-black via-zinc-900 to-black"
-    >
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-16 lg:py-20 grid gap-10 lg:grid-cols-[1.2fr,1fr] items-center"
-      >
-        <!-- Text -->
-        <div class="space-y-5">
-          <p class="text-xs uppercase tracking-[0.2em] text-gray-400">
-            Latest Issue
-          </p>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading text-gold">
-            IMPILO Magazine: Latest Issue
-          </h2>
-          <p class="text-sm sm:text-base text-gray-200">
-            Discover bold stories in fashion, lifestyle and culture that shape our
-            generation. From Jozi streets to global runways, IMPILO captures
-            creativity, innovation and real voices.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a
-              href="https://impilomag.co.za/media/mag_cover.png"
-              target="_blank"
-              class="btn bg-gold text-black border-none hover:bg-white hover:text-black px-6"
-            >
-              Read Issue
-            </a>
-            <a
-              href="#subscribe"
-              class="btn bg-transparent border border-gold text-gold hover:bg-gold hover:text-black px-6"
-            >
-              Subscribe
-            </a>
-          </div>
-
-          <div class="text-xs text-gray-400 pt-3">
-            <p>Featured: <span class="text-gold">Glenda Lee Designs</span></p>
-            <p>Exclusive Jozi Fashion Runway · Feb / March 2025</p>
-          </div>
-        </div>
-
-        <!-- Cover image -->
-        <div class="relative">
-          <div
-            class="rounded-2xl overflow-hidden border border-gold/90 shadow-2xl max-w-sm mx-auto"
-          >
-            <img
-              src="https://impilomag.co.za/media/mag_cover.png"
-              alt="IMPILO Magazine – Glenda Lee Designs cover"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CULTURE & CREATIVITY -->
-    <section class="py-14 bg-black border-t border-gold/40">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 grid gap-10 lg:grid-cols-2">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-heading text-gold mb-3">
-            Culture &amp; Creativity
-          </h2>
-          <p class="text-sm sm:text-base text-gray-300 mb-4">
-            From Jozi streets to global runways — dive into deep features on
-            African innovation, youth culture, fashion, lifestyle and business.
-            IMPILO is a platform for emerging voices and established creatives.
-          </p>
-          <p class="text-sm text-gray-400">
-            We document the ideas, brands and people who shape how we see
-            ourselves. Every issue is crafted as a visual and editorial journey.
-          </p>
-
-          <div class="flex flex-wrap gap-3 mt-5 text-xs">
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">
-              Fashion
-            </span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">
-              Lifestyle
-            </span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">
-              Culture
-            </span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">
-              Business
-            </span>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div
-            class="rounded-xl bg-gradient-to-br from-zinc-800 to-black border border-gold/40 p-4 flex flex-col justify-between"
-          >
-            <h3 class="font-heading text-lg text-gold mb-2">Fashion</h3>
-            <p class="text-xs text-gray-300">
-              Runway, streetwear and editorial campaigns that redefine African
-              style and identity.
-            </p>
-          </div>
-          <div
-            class="rounded-xl bg-gradient-to-br from-zinc-800 to-black border border-gold/40 p-4 flex flex-col justify-between"
-          >
-            <h3 class="font-heading text-lg text-gold mb-2">Lifestyle</h3>
-            <p class="text-xs text-gray-300">
-              Stories on wellness, food, travel and everyday creativity in
-              modern South Africa.
-            </p>
-          </div>
-          <div
-            class="rounded-xl bg-gradient-to-br from-zinc-800 to-black border border-gold/40 p-4 flex flex-col justify-between"
-          >
-            <h3 class="font-heading text-lg text-gold mb-2">Culture</h3>
-            <p class="text-xs text-gray-300">
-              Music, art and community features that document a generation in
-              motion.
-            </p>
-          </div>
-          <div
-            class="rounded-xl bg-gradient-to-br from-zinc-800 to-black border border-gold/40 p-4 flex flex-col justify-between"
-          >
-            <h3 class="font-heading text-lg text-gold mb-2">Business</h3>
-            <p class="text-xs text-gray-300">
-              Entrepreneurship, branding and creative economy stories for new
-              founders and innovators.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPACT PAST ISSUES CAROUSEL -->
-    <section id="issues" class="py-10 bg-primary border-t border-gold/30">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16">
-        <div class="flex items-center justify-between gap-3 mb-4">
-          <h2 class="text-xl sm:text-2xl font-heading text-gold">
-            Past Issues
-          </h2>
-          <p class="text-[11px] sm:text-xs text-gray-400">
-            Swipe to browse our cover history
-          </p>
-        </div>
-
-        <div id="pastIssuesCarousel" class="owl-carousel owl-theme text-xs">
-          <!-- Issue 1 – Females of the Future -->
-          <article class="bg-black/80 border border-gold/40 rounded-xl overflow-hidden">
-            <a href="https://impilomag.co.za/media/genesis.jpg" target="_blank" class="block">
-              <div class="aspect-[3/4] overflow-hidden">
-                <img
-                  src="https://impilomag.co.za/media/genesis.jpg"
-                  alt="IMPILO Magazine Issue 1 – Females of the Future cover"
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <p class="text-gold font-semibold text-xs">
-                  Issue 1 · Females of the Future
-                </p>
-                <p class="text-[11px] text-gray-400">Feb / March 2019</p>
-              </div>
-            </a>
-          </article>
-
-          <!-- Replay – Life After Covid-19 -->
-          <article class="bg-black/80 border border-gold/40 rounded-xl overflow-hidden">
-            <a href="https://impilomag.co.za/media/magco.png" target="_blank" class="block">
-              <div class="aspect-[3/4] overflow-hidden">
-                <img
-                  src="https://impilomag.co.za/media/magco.png"
-                  alt="IMPILO Replay · Life After Covid-19 cover"
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <p class="text-gold font-semibold text-xs">
-                  Replay · Life After Covid-19
-                </p>
-                <p class="text-[11px] text-gray-400">Special edition</p>
-              </div>
-            </a>
-          </article>
-
-          <!-- Diamond Modeling Academy (4IR) -->
-          <article class="bg-black/80 border border-gold/40 rounded-xl overflow-hidden">
-            <a
-              href="https://raw.githubusercontent.com/TommyTeaVee/ImpiloV2/refs/heads/master/public/cover.png"
-              target="_blank"
-              class="block"
-            >
-              <div class="aspect-[3/4] overflow-hidden">
-                <img
-                  src="https://raw.githubusercontent.com/TommyTeaVee/ImpiloV2/refs/heads/master/public/cover.png"
-                  alt="IMPILO Magazine – Diamond Modeling Academy 4IR cover"
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <p class="text-gold font-semibold text-xs">
-                  Diamond Modeling Academy · 4IR
-                </p>
-                <p class="text-[11px] text-gray-400">April / May 2023</p>
-              </div>
-            </a>
-          </article>
-
-          <!-- Recover – Diamond Modeling Academy -->
-          <article class="bg-black/80 border border-gold/40 rounded-xl overflow-hidden">
-            <a
-              href="https://github.com/TommyTeaVee/ImpiloV2/blob/digital/public/recover.png?raw=true"
-              target="_blank"
-              class="block"
-            >
-              <div class="aspect-[3/4] overflow-hidden">
-                <img
-                  src="https://github.com/TommyTeaVee/ImpiloV2/blob/digital/public/recover.png?raw=true"
-                  alt="IMPILO Magazine Recover · Diamond Modeling Academy cover"
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <p class="text-gold font-semibold text-xs">
-                  Recover · Diamond Modeling Academy
-                </p>
-                <p class="text-[11px] text-gray-400">Jan / Feb 2024</p>
-              </div>
-            </a>
-          </article>
-
-          <!-- Wise-K Fashion Designer -->
-          <article class="bg-black/80 border border-gold/40 rounded-xl overflow-hidden">
-            <a
-              href="https://github.com/TommyTeaVee/ImpiloV2/blob/wise-K/public/Impilo_cover.png?raw=true"
-              target="_blank"
-              class="block"
-            >
-              <div class="aspect-[3/4] overflow-hidden">
-                <img
-                  src="https://github.com/TommyTeaVee/ImpiloV2/blob/wise-K/public/Impilo_cover.png?raw=true"
-                  alt="IMPILO Magazine Wise-K Fashion Designer cover"
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <p class="text-gold font-semibold text-xs">
-                  Wise-K Fashion Designer
-                </p>
-                <p class="text-[11px] text-gray-400">July / August 2024</p>
-              </div>
-            </a>
-          </article>
-
-          <!-- Glenda Lee Designs · Jozi Fashion Runway 2025 -->
-          <article class="bg-black/80 border border-gold/40 rounded-xl overflow-hidden">
-            <a href="https://impilomag.co.za/media/mag_cover.png" target="_blank" class="block">
-              <div class="aspect-[3/4] overflow-hidden">
-                <img
-                  src="https://impilomag.co.za/media/mag_cover.png"
-                  alt="IMPILO Magazine Glenda Lee Designs & Jozi Fashion Runway cover"
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="p-2">
-                <p class="text-gold font-semibold text-xs">
-                  Glenda Lee Designs · Jozi Fashion Runway
-                </p>
-                <p class="text-[11px] text-gray-400">Feb / March 2025</p>
-              </div>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPLORE SERVICES -->
-    <section
-      id="services"
-      class="py-16 bg-black border-t border-gold/40"
-    >
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16">
-        <h2 class="text-3xl sm:text-4xl font-heading text-gold mb-2">
-          Explore IMPILO
-        </h2>
-        <p class="text-sm sm:text-base text-gray-300 max-w-2xl mb-8">
-          IMPILO is more than a magazine. We offer runway coverage, modelling
-          development, digital broadcasting, podcasts and curated catalogues for
-          brands and creatives.
-        </p>
-
-        <div
-          class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 text-sm"
-        >
-          <article
-            class="rounded-2xl border border-gold/50 bg-gradient-to-b from-zinc-900 to-black p-5 flex flex-col justify-between"
-          >
-            <div>
-              <h3 class="font-heading text-lg text-gold mb-2">Fashion</h3>
-              <p class="text-xs text-gray-300">
-                Editorial fashion, runway shows and designer features shot with
-                cinematic storytelling.
-              </p>
+  <!-- Hero Section / Slider -->
+  <section id="home">
+    <div id="main-slider" class="owl-carousel owl-theme relative">
+      <div class="relative w-full bg-[url('https://github.com/TommyTeaVee/ImpiloV2/blob/master/cover_pages/cover4.png?raw=true')] bg-no-repeat bg-cover bg-center">
+        <div class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-6 lg:px-12">
+          <div class="flex flex-col gap-5 md:gap-8">
+            <h2 class="text-4xl font-heading font-bold text-gold">IMPILO Magazine: Latest Issue</h2>
+            <p class="text-lg max-w-xl">Discover bold stories in fashion, lifestyle, and culture that shape our generation. Experience Impilo in its purest, most dynamic form.</p>
+            <div class="flex flex-row items-center gap-4">
+              <a href="https://impilomag.co.za/media/mag_cover.png" target="_blank" class="btn bg-gold text-black hover:bg-black hover:text-gold border-none">
+                Read Issue <i class="pl-2 fa-solid fa-book-open"></i>
+              </a>
+              <a href="#subscribe" class="btn bg-primary border border-gold text-gold hover:bg-gold hover:text-black">
+                Subscribe <i class="pl-2 fa-solid fa-star"></i>
+              </a>
+              <button class="outline-icon w-10 h-10 border border-gold rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-black">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
             </div>
-            <a href="#jozi-fashion" class="mt-4 text-xs text-gold underline">
-              Jozi Fashion Runway
-            </a>
-          </article>
-
-          <article
-            class="rounded-2xl border border-gold/50 bg-gradient-to-b from-zinc-900 to-black p-5 flex flex-col justify-between"
-          >
-            <div>
-              <h3 class="font-heading text-lg text-gold mb-2">Lifestyle</h3>
-              <p class="text-xs text-gray-300">
-                Food, travel, wellness and everyday culture from young voices
-                across South Africa.
-              </p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="relative w-full bg-[url('https://github.com/TommyTeaVee/ImpiloV2/blob/master/cover_pages/cover3.png?raw=true')] bg-no-repeat bg-cover bg-center">
+        <div class="bg-overlay grid grid-cols-1 lg:grid-cols-2 py-20 md:py-28 lg:py-32 xl:py-56 px-6 lg:px-12">
+          <div class="flex flex-col gap-5 md:gap-8">
+            <h2 class="text-4xl font-heading font-bold text-gold">Culture & Creativity</h2>
+            <p class="text-lg max-w-xl">From Jozi streets to global runways — dive into our deep features on African innovation and cultural expression.</p>
+            <div class="flex flex-row items-center gap-4">
+              <a href="https://impilomag.co.za/media/genesis.jpg" target="_blank" class="btn bg-gold text-black hover:bg-black hover:text-gold border-none">
+                Read Issue <i class="pl-2 fa-solid fa-book-open"></i>
+              </a>
+              <a href="#subscribe" class="btn bg-primary border border-gold text-gold hover:bg-gold hover:text-black">
+                Subscribe
+              </a>
             </div>
-            <a href="#streaming" class="mt-4 text-xs text-gold underline">
-              Watch &amp; Listen
-            </a>
-          </article>
-
-          <article
-            class="rounded-2xl border border-gold/50 bg-gradient-to-b from-zinc-900 to-black p-5 flex flex-col justify-between"
-          >
-            <div>
-              <h3 class="font-heading text-lg text-gold mb-2">Modelling</h3>
-              <p class="text-xs text-gray-300">
-                Development, runway training, comp cards and editorial shoots
-                via Impilo Modelling Agency.
-              </p>
-            </div>
-            <a href="#modelling" class="mt-4 text-xs text-gold underline">
-              Impilo Agency
-            </a>
-          </article>
-
-          <article
-            class="rounded-2xl border border-gold/50 bg-gradient-to-b from-zinc-900 to-black p-5 flex flex-col justify-between"
-          >
-            <div>
-              <h3 class="font-heading text-lg text-gold mb-2">Business</h3>
-              <p class="text-xs text-gray-300">
-                Profiles on founders, brands and creative entrepreneurs
-                building new stories from Africa.
-              </p>
-            </div>
-            <a href="catalogue.html" class="mt-4 text-xs text-gold underline">
-              Discover Catalogue
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXCLUSIVE JOZI FASHION RUNWAY -->
-    <section
-      id="jozi-fashion"
-      class="py-16 bg-black border-t border-gold/40"
-    >
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 grid gap-10 lg:grid-cols-2 items-start"
-      >
-        <!-- Text -->
-        <div class="space-y-4">
-          <h2 class="text-3xl sm:text-4xl font-heading text-gold">
-            Exclusive Jozi Fashion Runway
-          </h2>
-          <p class="text-sm sm:text-base text-gray-300">
-            Step into the heart of Johannesburg’s creative pulse. The Exclusive
-            Jozi Fashion Runway celebrates designers with bold style, cultural
-            identity and cinematic storytelling – captured live by Impilo Digital
-            Media Group.
-          </p>
-          <p class="text-sm text-gray-400">
-            Featuring Glenda Lee Designs, emerging designers and established
-            icons, the runway merges traditional shows with immersive visuals
-            for both live screens and streaming platforms.
-          </p>
-
-          <div class="flex flex-wrap gap-3 pt-2">
-            <a
-              href="https://www.youtube.com/watch?v=9MMPxLqssxQ"
-              target="_blank"
-              class="btn bg-red-600 text-white border-none hover:bg-red-500 px-5"
-            >
-              <i class="fa-brands fa-youtube mr-2"></i>
-              Watch Runway Show
-            </a>
-            <a
-              href="ita.html"
-              class="btn bg-transparent border border-gold text-gold hover:bg-gold hover:text-black px-5"
-            >
-              <i class="fa-solid fa-user-tie mr-2"></i>
-              Impilo Modelling Agency
-            </a>
-          </div>
-
-          <p class="text-xs text-gray-500 pt-2">
-            Casting, runway coaching and media coverage powered by Impilo
-            Modelling Agency and IMPILO Magazine.
-          </p>
-        </div>
-
-        <!-- Video -->
-        <div>
-          <div
-            class="relative w-full aspect-video rounded-2xl overflow-hidden border border-gold shadow-2xl"
-          >
-            <iframe
-              src="https://www.youtube.com/embed/9MMPxLqssxQ"
-              title="Jozi Fashion Runway – Impilo Magazine"
-              loading="lazy"
-              class="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- IMPILO MODELLING AGENCY -->
-    <section
-      id="modelling"
-      class="py-16 bg-primary border-t border-gold/40"
-    >
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 grid gap-10 lg:grid-cols-2 items-center"
-      >
-        <div class="space-y-4">
-          <h2 class="text-3xl sm:text-4xl font-heading text-gold">
-            Impilo Modelling Agency
-          </h2>
-          <p class="text-sm sm:text-base text-gray-300">
-            Empowering talent across Africa, the Impilo Modelling Agency nurtures
-            models and creatives through mentorship, coaching and real industry
-            opportunities. From runway to campaigns, we develop portfolios that
-            are ready for agencies, brands and casting directors.
-          </p>
-          <ul class="text-sm text-gray-300 list-disc pl-5 space-y-1">
-            <li>Runway training and fashion show participation.</li>
-            <li>Editorial and commercial photoshoots.</li>
-            <li>Portfolio development and comp cards.</li>
-            <li>Performance arts and on-camera presence.</li>
-          </ul>
-          <div class="flex flex-wrap gap-3 pt-2">
-            <a
-              href="ita.html"
-              class="btn bg-gold text-black border-none hover:bg-white hover:text-black px-5"
-            >
-              Join the Agency
-            </a>
-            <a
-              href="models.html"
-              class="btn bg-transparent border border-gold text-gold hover:bg-gold hover:text-black px-5"
-            >
-              View Model Portfolios
-            </a>
-          </div>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden border border-gold/80 shadow-2xl">
-          <img
-            src="https://impilomag.co.za/media/impilo_logo.png"
-            alt="Impilo Modelling Agency branding"
-            loading="lazy"
-            class="w-full h-full object-contain bg-black"
-          />
-        </div>
+  <!-- Past Issues Thumbnails (small, side block) -->
+  <div class="block md:absolute md:top-[50%] md:-right-14 bg-black/70 py-5 pl-5 rounded-xl z-[1] w-full md:w-[700px] mt-6 md:mt-0">
+    <h3 class="text-gold font-heading mb-4 text-xl">Past Issues</h3>
+    <div id="slider-thumb" class="owl-carousel owl-theme">
+      <div class="item" data-index="0">
+        <img src="./media/genesis.jpg" alt="Issue 1" class="w-64 h-72 object-cover rounded-xl cursor-pointer">
       </div>
-    </section>
-
-    <!-- IMPILO STREAMING SERVICES -->
-    <section
-      id="streaming"
-      class="py-16 bg-black border-t border-gold/40"
-    >
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 grid gap-10 lg:grid-cols-2 items-center"
-      >
-        <div class="rounded-2xl overflow-hidden border border-gold/80 shadow-2xl">
-          <img
-            src="https://impilomag.co.za/media/cover1.png"
-            alt="ImpiloTV Above & Beyond show cover"
-            loading="lazy"
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <div class="space-y-4">
-          <h2 class="text-3xl sm:text-4xl font-heading text-gold">
-            Impilo Streaming Services
-          </h2>
-          <p class="text-sm sm:text-base text-gray-300">
-            Beyond print, IMPILO is a digital-first experience. With Impilo
-            Streaming Services we bring you documentaries, runway shows,
-            podcasts and exclusive cultural content anytime, anywhere.
-          </p>
-          <p class="text-sm text-gray-400">
-            From Above &amp; Beyond with TommyTV &amp; guests to Jozi Fashion
-            Runway recaps, our channels connect audiences and creators in real
-            time.
-          </p>
-          <div class="flex flex-wrap gap-3 pt-2">
-            <a
-              href="https://www.youtube.com/@impilomag"
-              target="_blank"
-              class="btn bg-red-600 text-white border-none hover:bg-red-500 px-5"
-            >
-              <i class="fa-brands fa-youtube mr-2"></i>
-              Start Streaming
-            </a>
-            <a
-              href="catalogue.html"
-              class="btn bg-transparent border border-gold text-gold hover:bg-gold hover:text-black px-5"
-            >
-              View Catalogue Partners
-            </a>
-          </div>
-        </div>
+      <div class="item" data-index="1">
+        <img src="https://raw.githubusercontent.com/TommyTeaVee/ImpiloV2/refs/heads/master/public/cover.png" alt="Issue 2" class="w-64 h-72 object-cover rounded-xl cursor-pointer">
       </div>
-    </section>
-
-    <!-- IMPILO CATALOGUE TEASER -->
-    <section
-      id="catalogue"
-      class="py-16 bg-primary border-t border-gold/40"
-    >
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16">
-        <div class="max-w-3xl">
-          <h2 class="text-3xl sm:text-4xl font-heading text-gold mb-2">
-            Impilo Catalogue
-          </h2>
-          <p class="text-sm sm:text-base text-gray-300 mb-4">
-            The Impilo Catalogue is a curated collection of brands, designers and
-            creatives featured in our magazine, runway events and streaming shows.
-            It connects talent with audiences and opportunities.
-          </p>
-          <ul class="text-sm text-gray-300 list-disc pl-5 space-y-1 mb-5">
-            <li>Designer profiles and brand stories.</li>
-            <li>Product showcases and lookbooks.</li>
-            <li>Partnership and collaboration opportunities.</li>
-            <li>Direct contact and booking links.</li>
-          </ul>
-          <a
-            href="catalogue.html"
-            class="btn bg-gold text-black border-none hover:bg-white hover:text-black px-6"
-          >
-            Explore Full Catalogue
-          </a>
-        </div>
+      <div class="item" data-index="2">
+        <img src="./media/magco.png" alt="Issue 3" class="w-64 h-72 object-cover rounded-xl cursor-pointer">
       </div>
-    </section>
-
-    <!-- SUBSCRIBE -->
-    <section
-      id="subscribe"
-      class="py-16 bg-gold text-black text-center border-t border-black/20"
-    >
-      <div class="max-w-3xl mx-auto px-4">
-        <h2 class="text-3xl sm:text-4xl font-heading mb-3">
-          Stay Connected with IMPILO
-        </h2>
-        <p class="text-sm sm:text-base mb-6">
-          Sign up to receive updates on new issues, events, Jozi Fashion Runway
-          shows and exclusive digital features.
-        </p>
-        <form
-          class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4"
-          action="#"
-          method="post"
-        >
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-            class="px-4 py-3 rounded-md border border-black/60 w-full text-sm"
-          />
-          <button
-            type="submit"
-            class="btn bg-black text-gold hover:bg-white hover:text-black border border-black px-6"
-          >
-            Subscribe
-          </button>
-        </form>
-        <p class="text-xs text-black/70 mt-3">
-          We respect your privacy and only send relevant updates. You can
-          unsubscribe at any time.
-        </p>
+      <div class="item" data-index="3">
+        <img src="https://github.com/TommyTeaVee/ImpiloV2/blob/digital/public/recover.png?raw=true" alt="Issue 4" class="w-64 h-72 object-cover rounded-xl cursor-pointer">
       </div>
-    </section>
-  </main>
+      <div class="item" data-index="4">
+        <img src="https://github.com/TommyTeaVee/ImpiloV2/blob/wise-K/public/Impilo_cover.png?raw=true" alt="Issue 5" class="w-64 h-72 object-cover rounded-xl cursor-pointer">
+      </div>
+    </div>
+    <div class="flex flex-row gap-3 pt-4">
+      <button type="button" class="customPrevBtn py-1 px-2 rounded-sm bg-black text-gold hover:bg-gold hover:text-black">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button type="button" class="customNextBtn py-1 px-2 rounded-sm bg-black text-gold hover:bg-gold hover:text-black">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-  <footer class="bg-black border-t border-gold py-10 text-center">
-    <div class="flex flex-col items-center gap-3">
-      <img
-        src="https://impilomag.co.za/media/impilo_logo.png"
-        alt="IMPILO Magazine logo"
-        class="w-14 h-14 object-contain"
-      />
-      <h3 class="text-gold font-heading text-xl">Impilo Digital Media Group</h3>
-      <p class="text-xs text-gray-400">
-        &copy; 2025 IMPILO Magazine. All rights reserved.
+  <!-- Explore IMPILO Section -->
+  <section id="services" class="py-16 px-6 lg:px-20 bg-black text-secondary">
+    <h2 class="text-3xl font-heading text-gold mb-10">Explore IMPILO</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="p-6 border border-gold rounded-xl hover:bg-gold hover:text-black transition">Fashion</div>
+      <div class="p-6 border border-gold rounded-xl hover:bg-gold hover:text-black transition">Lifestyle</div>
+      <div class="p-6 border border-gold rounded-xl hover:bg-gold hover:text-black transition">Culture</div>
+      <div class="p-6 border border-gold rounded-xl hover:bg-gold hover:text-black transition">Business</div>
+    </div>
+  </section>
+
+  <!-- Products & Services Flipster Carousel -->
+  <section class="bg-black text-white py-16 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-yellow-500 mb-8">Our Products & Services</h2>
+      <p class="text-gray-300 mb-12">
+        Impilo delivers cinematic storytelling, creative services, and digital experiences that connect audiences with culture, fashion, and lifestyle.
       </p>
 
-      <!-- Footer Nav (no Issues link) -->
-      <nav
-        class="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-300"
-      >
-        <a href="#home" class="hover:text-gold transition">Home</a>
-        <a href="#jozi-fashion" class="hover:text-gold transition"
-          >Jozi Fashion</a
-        >
-        <a href="#modelling" class="hover:text-gold transition">Modelling</a>
-        <a href="#streaming" class="hover:text-gold transition">Streaming</a>
-        <a href="catalogue.html" class="hover:text-gold transition">Catalogue</a>
-        <a href="#subscribe" class="hover:text-gold transition">Subscribe</a>
-        <a href="privacy.html" class="hover:text-gold transition"
-          >Privacy &amp; Ad Policy</a
-        >
-      </nav>
-
-      <!-- Socials -->
-      <div class="flex gap-5 mt-4 text-lg text-gold">
-        <a
-          href="https://facebook.com/impilomag"
-          target="_blank"
-          aria-label="IMPILO on Facebook"
-          ><i class="fab fa-facebook"></i
-        ></a>
-        <a
-          href="https://instagram.com/impilomag"
-          target="_blank"
-          aria-label="IMPILO on Instagram"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a
-          href="https://twitter.com/impilomag"
-          target="_blank"
-          aria-label="IMPILO on X"
-          ><i class="fab fa-x-twitter"></i
-        ></a>
-        <a
-          href="https://www.youtube.com/@impilomag"
-          target="_blank"
-          aria-label="IMPILO on YouTube"
-          ><i class="fab fa-youtube"></i
-        ></a>
+      <!-- Flipster Carousel -->
+      <div id="flipster-services">
+        <ul>
+          <!-- Card 1 -->
+          <li>
+            <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
+              <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Sponsored Visual Campaigns</h3>
+              <p class="text-gray-300">Cinematic storytelling campaigns for brands, combining fashion, lifestyle, and cultural narratives.</p>
+              <img src="./media/monster.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+            </div>
+          </li>
+          <!-- Card 2 -->
+          <li>
+            <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
+              <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Branded Content Partnerships</h3>
+              <p class="text-gray-300">Collaborative short films, behind-the-scenes videos, and brand integrations that resonate with audiences.</p>
+              <img src="./media/brand_power.png" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+            </div>
+          </li>
+          <!-- Card 3 -->
+          <li>
+            <div class="bg-gray-900 p-6   block max-w-sm  rounded-base rounded shadow-xs  hover:scale-105 transition-transform duration-300">
+              <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Event Coverage & Livestreams</h3>
+              <p class="text-gray-300">Professional coverage of fashion shows, cultural events, and live streaming experiences for global audiences.</p>
+              <img src="./media/obs.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+            </div>
+          </li>
+          <!-- Card 4 -->
+          <li>
+            <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
+              <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Digital Merch & Tip Jar</h3>
+              <p class="text-gray-300">Enable fans to support creators with digital products, tips, and subscription experiences.</p>
+              <img src="./media/mag_banner.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+            </div>
+          </li>
+          <!-- Card 5 -->
+          <li>
+            <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
+              <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Creative Production Services</h3>
+              <p class="text-gray-300">Full-service production including VFX, editing, storyboarding, and cinematic video creation.</p>
+              <img src="./media/pan.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+            </div>
+          </li>
+          <!-- Card 6 -->
+          <li>
+            <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
+              <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Streaming & Digital Content</h3>
+              <p class="text-gray-300">Exclusive access to podcasts, documentaries, fashion shows, and lifestyle content on-demand.</p>
+              <img src="./media/cover1.png" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+            </div>
+          </li>
+        </ul>
       </div>
+    </div>
+  </section>
+
+  <!-- Exclusive Jozi Fashion Runway Section with Flipster Carousel -->
+  <section id="jozi-fashion" class="bg-primary text-secondary py-20 px-6 lg:px-20">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-heading text-gold mb-6">Exclusive Jozi Fashion Runway</h2>
+      <p class="max-w-3xl mx-auto mb-10 text-gray-300">
+        Step into Johannesburg’s vibrant fashion scene with the <strong>Exclusive Jozi Fashion Runway</strong>.
+        This showcase celebrates both emerging talents and established designers, merging bold style with cultural storytelling.
+        From dynamic runway presentations to immersive multimedia, audiences experience the essence of Jozi’s creative pulse.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Video Embed -->
+        <div>
+          <iframe 
+            class="w-full aspect-video rounded-lg shadow-lg border border-gray-200" 
+            src="https://www.youtube.com/embed/9MMPxLqssxQ"  
+            allowfullscreen>
+         </iframe> 
+        </div>
+
+        <!-- Description + Learn More -->
+        <div class="flex flex-col justify-center gap-6 text-left">
+          <p>
+            The runway blends fashion, music, and cinematic visuals to bring Johannesburg’s creative identity to life. 
+            Each designer’s collection tells a story, combining traditional African aesthetics with contemporary trends.
+          </p>
+          <p>
+            Experience live models, striking visuals, and storytelling that transcends the runway. 
+            This event is more than fashion—it’s a cultural movement capturing the heart of Jozi.
+          </p>
+
+          <!-- Learn More toggle -->
+          <button id="learnMoreBtn" class="btn bg-gold text-black hover:bg-black hover:text-gold w-fit mt-4">
+            Learn More
+          </button>
+          <div id="learnMoreContent" class="mt-4 text-gray-300 hidden">
+            <p>
+              Featured designers include both established icons and rising talents, showcasing couture, streetwear, and experimental fashion. 
+              Our behind-the-scenes team captured every detail, from intricate fabric patterns to runway choreography, highlighting the artistry behind each collection.
+            </p>
+            <p class="mt-2">
+              Attendees enjoy immersive experiences with live performances, interactive displays, and live streaming, connecting global audiences to Jozi’s fashion culture.
+            </p>
+            <a href="jozi-fashion.html" class="inline-flex mt-3 text-gold underline text-sm">
+              View Jozi Fashion Runway Platform
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Designer/Behind-the-Scenes Flipster Carousel -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-heading text-gold mb-6 text-center">Featured Designers & BTS Moments</h3>
+        <ul id="flipster-runway" class="flipster">
+          <!-- Card 1 -->
+          <li>
+            <div class="card bg-gray-900 rounded-lg shadow-lg hover:scale-105 transform transition duration-300 p-6 rounded-lg">
+              <img src="./media/sthe.jpg" alt="Glenda Lee" class="rounded-lg w-full h-64 object-cover mb-4">
+              <h4 class="text-2xl font-semibold text-yellow-500">Glenda Lee Designs</h4>
+              <p class="text-gray-300 mt-2">Couture collection inspired by traditional African patterns fused with modern design.</p>
+            </div>
+          </li>
+          <!-- Card 2 -->
+          <li>
+            <div class="card bg-gray-900  rounded-lg shadow-lg block hover:scale-105 transform transition duration-300 p-6 rounded-lg">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="Designer 2" class="rounded-lg w-full h-64 object-cover mb-4">
+              <h4 class="text-2xl font-semibold text-yellow-500">WiseK</h4>
+              <p class="text-gray-300 mt-2">Streetwear meets high fashion in this edgy, dynamic collection.</p>
+            </div>
+          </li>
+          <!-- Card 3 -->
+          <li>
+            <div class="card bg-gray-900 shadow-xl hover:scale-105 transform transition duration-300 p-6 rounded-lg">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="BTS 1" class="rounded-lg w-full h-64 object-cover mb-4">
+              <h4 class="text-2xl font-semibold text-yellow-500">Behind the Scenes</h4>
+              <p class="text-gray-300 mt-2">Capturing the creativity and precision behind each runway moment.</p>
+            </div>
+          </li>
+          <!-- Card 4 -->
+          <li>
+            <div class="card bg-gray-900 shadow-xl hover:scale-105 transform transition duration-300 p-6 rounded-lg">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="BTS 2" class="rounded-lg w-full h-64 object-cover mb-4">
+              <h4 class="text-2xl font-semibold text-yellow-500">Behind the Scenes</h4>
+              <p class="text-gray-300 mt-2">Exclusive moments from model fittings, rehearsals, and backstage creativity.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impilo Modelling Agency Section -->
+  <section class="bg-black text-secondary py-20 px-6 lg:px-20">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-heading text-gold mb-6">Impilo Modelling Agency</h2>
+      <p class="max-w-3xl mx-auto mb-10 text-gray-300">
+        Empowering talent across Africa, the <strong>Impilo Modelling Agency</strong> nurtures models and creatives through mentorship, workshops, and global exposure.
+        From runway to campaigns, we elevate voices and stories that deserve to be seen.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <!-- Description / Learn More -->
+        <div class="flex flex-col gap-6 text-left">
+          <p>
+            Our agency offers comprehensive modeling packages tailored to develop professional talent. We combine fashion expertise, media exposure, and creative development to ensure each model thrives in the industry.
+          </p>
+
+          <!-- Learn More toggle -->
+          <button id="modelLearnMoreBtn" class="btn bg-gold text-black hover:bg-black hover:text-gold w-fit mt-4">
+            View Modeling Packages
+          </button>
+          <div id="modelLearnMoreContent" class="mt-4 text-gray-300 hidden space-y-4">
+            <!-- Package 1 -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+              <h4 class="text-xl font-semibold text-yellow-500 mb-2">Editorial and Commercial Modeling</h4>
+              <p class="text-gray-300">Professional modeling for magazine editorials, commercial campaigns, and brand promotions.</p>
+            </div>
+            <!-- Package 2 -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+              <h4 class="text-xl font-semibold text-yellow-500 mb-2">Fashion Runway</h4>
+              <p class="text-gray-300">Participation in fashion shows, runway training, and live event performances.</p>
+            </div>
+            <!-- Package 3 -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+              <h4 class="text-xl font-semibold text-yellow-500 mb-2">Professional Modeling Photoshoot</h4>
+              <p class="text-gray-300">High-quality photoshoots tailored for portfolios, social media, and brand promotion.</p>
+            </div>
+            <!-- Package 4 -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+              <h4 class="text-xl font-semibold text-yellow-500 mb-2">Social Media Marketing & Brand Influence</h4>
+              <p class="text-gray-300">Guidance on personal branding, influencer campaigns, and social media presence.</p>
+            </div>
+            <!-- Package 5 -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+              <h4 class="text-xl font-semibold text-yellow-500 mb-2">Performance Arts (Voice Over, Drama, Film)</h4>
+              <p class="text-gray-300">Training and opportunities in acting, voice-over work, and performance art projects.</p>
+            </div>
+            <!-- Package 6 -->
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg hover:scale-105 transform transition duration-300">
+              <h4 class="text-xl font-semibold text-yellow-500 mb-2">Portfolio Development & Casting Reels</h4>
+              <p class="text-gray-300">Professional portfolio creation including photoshoots and casting videos to showcase your talent.</p>
+            </div>
+            <a href="ita.html" class="inline-flex mt-3 text-gold underline text-sm">
+              Visit Impilo Modelling Agency Page
+            </a>
+          </div>
+        </div>
+
+        <!-- Modelling Image -->
+        <div class="w-full max-w-lg mx-auto">
+          <img src="./media/thando.jpg" alt="Impilo Modelling Agency" class="rounded-xl border border-gold object-cover w-full h-full shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Streaming Services --> 
+  <section id="streaming" class="py-20 px-6 lg:px-20 bg-primary text-secondary">
+    <h2 class="text-3xl font-heading text-gold mb-8">Impilo Streaming Services</h2>
+    <p class="max-w-3xl mb-8">
+      Beyond print, IMPILO is a digital-first experience. With <strong>Impilo Streaming Services</strong>, 
+      we bring you documentaries, runway shows, podcasts, and exclusive cultural content anytime, anywhere.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <img src="./media/cover1.png" height="400" width="200" alt="Impilo Streaming" class="rounded-xl border border-gold object-cover w-full h-full"> 
+      <div class="flex flex-col justify-center gap-6">
+        <p>
+          Our platform merges storytelling with technology to connect audiences and creators globally, giving fashion, art, and lifestyle enthusiasts premium digital access.
+        </p> 
+        <a href="https://www.youtube.com/@impilomag" target="_blank" class="btn bg-gold text-black hover:bg-black hover:text-gold w-fit">
+          Start Streaming
+        </a>
+      </div> 
+    </div> 
+  </section>
+
+  <!-- Catalogue -->
+  <section id="catalogue" class="py-20 px-6 lg:px-20 bg-black text-secondary"> 
+    <h2 class="text-3xl font-heading text-gold mb-8">Impilo Catalogue</h2> 
+    <p class="max-w-3xl mb-8">
+      The <strong>Impilo Catalogue</strong> is a curated collection of brands, designers, and creatives featured in our magazine and events. It serves as a bridge between talent and market opportunities.
+    </p> 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> 
+      <div class="p-6 border border-gold rounded-xl hover:bg-gold hover:text-black transition">Designer Profiles</div> 
+      <div class="p-6 border border-gold rounded-xl hover:bg-gold hover:text-black transition">Product Showcases</div> 
+      <div class="p-6 border border-gold rounded-xl hover:bg-gold hover:text-black transition">Partnership Opportunities</div> 
+    </div> 
+    <div class="mt-8 text-center"> 
+      <a href="./catalogue.html" class="btn bg-gold text-black hover:bg-black hover:text-gold">
+        Explore Catalogue
+      </a> 
+    </div>
+  </section> 
+<!-- Subscription CTA -->
+<!-- Subscription CTA -->
+<section id="subscribe" class="py-20 bg-gold text-black text-center">
+  <h2 class="text-4xl font-heading font-bold mb-6">Stay Connected with IMPILO</h2>
+  <p class="mb-8">Sign up to receive updates on new issues, events, and exclusive features.</p>
+
+  <form class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">
+
+    <input id="subFullname"
+           type="text"
+           placeholder="Enter your Full Name"
+           class="px-4 py-3 rounded-md border border-black w-full"
+           required>
+
+    <input id="subEmail"
+           type="email"
+           placeholder="Enter your Email"
+           class="px-4 py-3 rounded-md border border-black w-full"
+           required>
+
+    <button type="button"
+            onclick="subscribe()"
+            class="btn bg-black text-gold hover:bg-white hover:text-black transition-all px-6 py-3 rounded-md font-bold">
+      Subscribe
+    </button>
+
+    <a aria-label="Chat on WhatsApp"
+       href="https://wa.me/27688542416/?text=I'm%20inquiring%20about%20Impilo%20Magazine%20collaboration">
+      <img alt="Chat on WhatsApp" src="media/WhatsAppButtonGreenLarge.png" />
+    </a>
+
+  </form>
+
+  <div id="toastContainer" class="fixed top-6 right-6 z-50 flex flex-col gap-3"></div>
+</section>
+
+
+  
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gold py-10 sm:py-12 text-center px-4">
+    <div class="flex flex-col items-center gap-4">
+      <img src="./media/impilo_logo.png" width="60" height="60" alt="IMPILO Logo">
+      <h3 class="text-gold font-heading text-lg sm:text-xl">Impilo Digital Media Group</h3>
+      <p class="text-secondary text-xs sm:text-sm">&copy; 2025 IMPILO Magazine. All rights reserved.</p>
+      <div class="flex gap-5 mt-3 text-lg text-gold">
+        <a href="https://facebook.com/impilomag" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/impilomag" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/impilomag" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/@impilomag" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+         <div class="text-xs text-gray-400 space-x-2">
+      <a href="privacy-policy.html" class="link link-warning text-gold">Privacy Policy</a> |
+      <a href="cookie-policy.html" class="link link-warning text-gold">Cookie Policy</a> |
+      <a href="tos.html" class="link link-warning text-gold">Terms & Conditions</a>
+    </div>
     </div>
   </footer>
 
-  <!-- =========================
-       SCRIPTS
-  ========================== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <!-- If you use Flipster elsewhere, include its JS here; script.js will detect it safely -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.5/jquery.flipster.min.js"></script> -->
+  <!-- Scripts -->
   <script src="./script.js"></script>
+  <!-- include cookie modal here -->
+<div w3-include-html="./cookie-modal.html"></div>
+<div w3-include-html="./banner-modal.html"></div>
 </body>
 </html>

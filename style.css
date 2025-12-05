@@ -353,3 +353,77 @@ footer nav a:hover {
     padding: 0.5rem;
   }
 }
+
+.cookie-modal {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 460px;
+  z-index: 9999;
+}
+
+.cookie-box {
+  background: black;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 5px 24px rgba(0,0,0,0.5);
+  border: 1px solid #333;
+  font-size: 14px;
+}
+
+.cookie-box h3 {
+  color: gold;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cookie-box p {
+  margin-bottom: 12px;
+  color: white;
+  opacity: 0.9;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-accept {
+  background: gold;
+  color: black;
+}
+
+.btn-reject {
+  background: #444;
+  color: white;
+}
+
+.cookie-links {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.cookie-links a {
+  color: gold;
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.cookie-links a:hover {
+  opacity: 1;
+}

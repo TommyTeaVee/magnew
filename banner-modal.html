@@ -1,0 +1,32 @@
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:black;color:white;padding:16px;border-top:1px solid #222;z-index:9999;font-size:14px;text-align:center">
+  <p>
+    This site uses cookies for analytics and responsible advertising through digital medial and subscriptions.  
+    You can manage consent in <a href="settings.html" style="color:gold;text-decoration:underline;opacity:0.8">Privacy Settings</a>
+  </p>
+
+  <div style="display:flex;gap:10px;margin-top:10px;max-width:400px;margin-left:auto;margin-right:auto">
+    <button id="acceptBanner" style="flex:1;padding:8px;border:none;border-radius:8px;font-weight:bold;cursor:pointer;background:gold;color:black">Accept</button>
+    <button id="rejectBanner" style="flex:1;padding:8px;border:1px solid gold;border-radius:8px;font-weight:bold;cursor:pointer;background:#111;color:gold">Reject</button>
+  </div>
+</div>
+
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const KEY = "impilo-cookie-consent";
+  const banner = document.getElementById("cookieBanner");
+
+  if (!localStorage.getItem(KEY)) {
+    banner.style.display = "block";
+  }
+
+  document.getElementById("acceptBanner").addEventListener("click", () => {
+    localStorage.setItem(KEY, "accepted");
+    banner.style.display = "none";
+  });
+
+  document.getElementById("rejectBanner").addEventListener("click", () => {
+    localStorage.setItem(KEY, "rejected");
+    banner.style.display = "none";
+  });
+});
+</script>

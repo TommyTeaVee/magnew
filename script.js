@@ -317,3 +317,71 @@ function setupGenericCarousels() {
     ],
   });
 }
+
+
+async function subscribe() {
+  const fullname = document.getElementById("subFullname").value.trim();
+  const email = document.getElementById("subEmail").value.trim();
+
+  if (!fullname) {
+    showToast("Please enter your full name.", "error");
+    return;
+  }
+
+  if (!email || !email.includes("@")) {
+    showToast("Please enter a valid email address.", "error");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:35050/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fullname, email }), // MATCHES BACKEND + SEED
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      showToast("🎉 Welcome to Impilo Magazine! You're now subscribed!", "success");
+
+      document.getElementById("subFullname").value = "";
+      document.getElementById("subEmail").value = "";
+    } else {
+      showToast(data.message || "Subscription failed. Please try again.", "error");
+    }
+  } catch (err) {
+    console.error("Subscribe error:", err);
+    showToast("Network error. Please try again later.", "error");
+  }
+}
+function showToast(message, type = "success") {
+  const container = document.getElementById("toastContainer");
+
+  const toast = document.createElement("div");
+  toast.className =
+    "toast px-5 py-4 rounded-lg shadow-lg text-lg font-semibold border";
+
+  // Gold + Black Theme
+  if (type === "success") {
+    toast.className +=
+      " bg-black text-gold border-gold shadow-goldGlow";
+  } else {
+    toast.className +=
+      " bg-red-700 text-white border-red-300 shadow-md";
+  }
+
+  toast.innerText = message;
+  container.appendChild(toast);
+
+  // Animate in
+  setTimeout(() => toast.classList.add("show"), 50);
+
+  // Auto remove after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove("show");
+    toast.classList.add("hide");
+
+    setTimeout(() => toast.remove(), 400);
+  }, 3000);
+}

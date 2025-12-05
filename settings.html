@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Settings — Impilo Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="background:black;color:white;font-family:Arial, sans-serif;padding:24px;line-height:1.6;max-width:900px;margin:auto">
+
+<h1 style="color:gold;border-bottom:2px solid gold;padding-bottom:6px">Privacy & Cookie Settings</h1>
+<p>You are managing your consent preferences on :contentReference[oaicite:0]{index=0}</p>
+
+<h2 style="color:gold">Current Consent Status</h2>
+<p id="statusLabel" style="font-weight:bold;color:#ccc">Checking status...</p>
+
+<h2 style="color:gold">Update Your Preference</h2>
+<div style="display:flex;gap:12px;margin-top:10px">
+  <button id="setAccept" style="flex:1;padding:10px;border:none;border-radius:10px;font-weight:bold;cursor:pointer;background:gold;color:black">Accept Cookies</button>
+  <button id="setReject" style="flex:1;padding:10px;border:1px solid gold;border-radius:10px;font-weight:bold;cursor:pointer;background:#222;color:gold">Reject Cookies</button>
+</div>
+
+<p style="margin-top:20px;font-size:13px;color:#aaa;text-align:center">
+  Personalized advertising partners including :contentReference[oaicite:1]{index=1} may set their own cookies to improve relevance and measure campaigns.  
+  You can also manage ad personalization using the :contentReference[oaicite:2]{index=2} page externally.
+</p>
+
+<footer style="margin-top:50px;text-align:center;color:#777;font-size:12px">
+  © 2025 :contentReference[oaicite:3]{index=3}
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const KEY = "impilo-cookie-consent";
+  const status = document.getElementById("statusLabel");
+
+  const saved = localStorage.getItem(KEY);
+  if (saved === "accepted") {
+    status.textContent = "✅ You have accepted cookies.";
+    status.style.color = "lightgreen";
+  } else if (saved === "rejected") {
+    status.textContent = "❌ You have rejected cookies.";
+    status.style.color = "tomato";
+  } else {
+    status.textContent = "⚠ You have not selected a preference yet.";
+    status.style.color = "#ffcc00";
+  }
+
+  document.getElementById("setAccept").addEventListener("click", () => {
+    localStorage.setItem(KEY, "accepted");
+    status.textContent = "✅ You have accepted cookies.";
+    status.style.color = "lightgreen";
+  });
+
+  document.getElementById("setReject").addEventListener("click", () => {
+    localStorage.setItem(KEY, "rejected");
+    status.textContent = "❌ You have rejected cookies.";
+    status.style.color = "tomato";
+  });
+});
+</script>
+
+</body>
+</html>

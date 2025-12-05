@@ -1,0 +1,127 @@
+<!-- COOKIE CONSENT MODAL -->
+<div id="cookieConsentModal" class="cookie-modal">
+  <div class="cookie-box">
+    <h3>We respect your privacy 🍪</h3>
+    <p>
+     Impilo Digital media and it's affiliates uses cookies to enhance your experience and deliver responsible advertising through digital media   and
+      You can manage or withdraw consent at any time.
+    </p>
+
+    <div class="cookie-actions">
+      <button id="acceptAllBtn" class="btn-accept">Accept All</button>
+      <button id="rejectBtn" class="btn-reject">Reject</button>
+    </div>
+
+    <div class="cookie-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span>|</span>
+      <a href="cookie-policy.html">Cookie Policy</a>
+      <span>|</span>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+  </div>
+</div>
+
+<style>
+.cookie-modal {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 460px;
+  z-index: 9999;
+}
+
+.cookie-box {
+  background: black;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 5px 24px rgba(0,0,0,0.5);
+  border: 1px solid #333;
+  font-size: 14px;
+}
+
+.cookie-box h3 {
+  color: gold;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cookie-box p {
+  margin-bottom: 12px;
+  color: white;
+  opacity: 0.9;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-accept {
+  background: gold;
+  color: black;
+}
+
+.btn-reject {
+  background: #444;
+  color: white;
+}
+
+.cookie-links {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.cookie-links a {
+  color: gold;
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.cookie-links a:hover {
+  opacity: 1;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const storageKey = "impilo-cookie-consent";
+  const modal = document.getElementById("cookieConsentModal");
+  const acceptBtn = document.getElementById("acceptAllBtn");
+  const rejectBtn = document.getElementById("rejectBtn");
+
+  // Show if not yet answered
+  if (!localStorage.getItem(storageKey)) {
+    modal.style.display = "block";
+  } else {
+    modal.style.display = "none";
+  }
+
+  // Accept cookies
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem(storageKey, "accepted");
+    modal.style.display = "none";
+  });
+
+  // Reject cookies
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem(storageKey, "rejected");
+    modal.style.display = "none";
+  });
+});
+</script>
