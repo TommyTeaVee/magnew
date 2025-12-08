@@ -334,7 +334,7 @@ async function subscribe() {
   }
 
   try {
-    const res = await fetch("http://localhost:5050/api/subscribe", {
+    const res = await fetch("https://reg.impilomag.co.za/api/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ fullname, email }), // MATCHES BACKEND + SEED
