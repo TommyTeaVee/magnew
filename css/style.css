@@ -1,0 +1,457 @@
+/* ================================
+   IMPILO GLOBAL STYLES
+   Works with Tailwind + DaisyUI
+   ================================ */
+
+:root {
+  --impilo-bg: #000000;
+  --impilo-text: #ffffff;
+  --impilo-gold: #d4af37;
+  --impilo-muted: #9ca3af;
+  --impilo-card-bg: #020617;
+  --impilo-border-soft: rgba(212, 175, 55, 0.4);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--impilo-bg);
+  color: var(--impilo-text);
+  scroll-behavior: smooth;
+}
+
+/* Smooth scroll for anchor offset (header height) */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Improve font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Utility */
+.text-gold {
+  color: var(--impilo-gold);
+}
+
+/* ================================
+   BUTTON REFINEMENTS
+================================ */
+
+.btn {
+  border-radius: 9999px;
+  text-transform: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+.btn-primary {
+  background-color: var(--impilo-gold);
+  color: #000;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #f5e3a3;
+  color: #000;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--impilo-gold);
+  border: 1px solid var(--impilo-gold);
+}
+
+.btn-outline:hover {
+  background-color: var(--impilo-gold);
+  color: #000;
+}
+
+/* Disable DaisyUI uppercase on buttons if applied */
+.btn, .btn-primary, .btn-outline {
+  text-transform: none !important;
+}
+
+/* ================================
+   NAV / HEADER
+================================ */
+
+header {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.92);
+}
+
+/* Mobile menu smooth animation */
+#mobileMenu {
+  transition: all 0.25s ease;
+}
+
+/* ================================
+   HERO & SECTIONS
+================================ */
+
+section {
+  position: relative;
+}
+
+section h2 {
+  letter-spacing: 0.03em;
+}
+
+/* Give sections a gentle fade when scrolling (optional) */
+section {
+  scroll-margin-top: 90px;
+}
+
+/* ================================
+   MODEL GRID (models.html, models-men.html)
+================================ */
+
+.model-card {
+  background: radial-gradient(circle at top, #111827 0, #020617 60%);
+  border-radius: 1.25rem;
+  border: 1px solid var(--impilo-border-soft);
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.model-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
+  border-color: var(--impilo-gold);
+}
+
+.model-img-wrapper {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.model-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.5s ease;
+}
+
+.model-card:hover .model-img-wrapper img {
+  transform: scale(1.07);
+}
+
+.model-body {
+  padding: 0.75rem 0.9rem 0.9rem;
+}
+
+.model-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  color: var(--impilo-gold);
+  margin-bottom: 0.15rem;
+}
+
+.model-meta {
+  font-size: 0.75rem;
+  color: #e5e7eb;
+}
+
+.model-location {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-top: 0.2rem;
+}
+
+/* ================================
+   FILTER CHIPS
+================================ */
+
+.filter-chip {
+  border-radius: 9999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  text-transform: none;
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+  border-color: var(--impilo-gold);
+  color: var(--impilo-gold);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.filter-chip.active {
+  background: var(--impilo-gold);
+  color: #000;
+  border-color: var(--impilo-gold);
+}
+
+/* ================================
+   PORTFOLIO (single model pages)
+================================ */
+
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: radial-gradient(circle at top, #111827 0, #020617 60%);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  padding: 0.6rem;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.8);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--impilo-gold);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
+}
+
+.portfolio-img-wrapper {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.portfolio-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);
+  transition: transform 0.6s ease;
+}
+
+.portfolio-item:hover .portfolio-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.portfolio-item figcaption {
+  font-size: 0.75rem;
+  color: #e5e7eb;
+}
+
+/* ================================
+   OWL CAROUSEL – PAST ISSUES
+================================ */
+
+#pastIssuesCarousel .owl-stage-outer {
+  padding: 0.75rem 0 1rem;
+}
+
+#pastIssuesCarousel .owl-nav {
+  margin-top: 0.25rem;
+}
+
+#pastIssuesCarousel .owl-nav button.owl-prev,
+#pastIssuesCarousel .owl-nav button.owl-next {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--impilo-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--impilo-gold);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+#pastIssuesCarousel .owl-nav button.owl-prev:hover,
+#pastIssuesCarousel .owl-nav button.owl-next:hover {
+  background-color: var(--impilo-gold);
+  color: #000;
+}
+
+#pastIssuesCarousel .owl-nav button span {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+#pastIssuesCarousel .owl-dots {
+  margin-top: 0.6rem;
+}
+
+#pastIssuesCarousel .owl-dot span {
+  width: 8px;
+  height: 8px;
+  background: rgba(148, 163, 184, 0.6);
+  transition: all 0.2s ease;
+}
+
+#pastIssuesCarousel .owl-dot.active span {
+  background: var(--impilo-gold);
+  transform: scale(1.2);
+}
+
+/* Generic Owl for other carousels */
+.owl-carousel .owl-item img {
+  display: block;
+}
+
+/* ================================
+   FORMS / SUBSCRIBE
+================================ */
+
+input[type="email"],
+input[type="text"],
+input[type="number"],
+textarea {
+  outline: none;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  box-shadow: 0 0 0 1px #000, 0 0 0 2px var(--impilo-gold);
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer nav a {
+  text-decoration: none;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   SMALL SCREEN TWEAKS
+================================ */
+
+@media (max-width: 640px) {
+  .model-body {
+    padding: 0.65rem 0.75rem 0.8rem;
+  }
+
+  .model-name {
+    font-size: 1rem;
+  }
+
+  .portfolio-item {
+    padding: 0.5rem;
+  }
+}
+
+.cookie-modal {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 460px;
+  z-index: 9999;
+}
+
+.cookie-box {
+  background: black;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 5px 24px rgba(0,0,0,0.5);
+  border: 1px solid #333;
+  font-size: 14px;
+}
+
+.cookie-box h3 {
+  color: gold;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cookie-box p {
+  margin-bottom: 12px;
+  color: white;
+  opacity: 0.9;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-accept {
+  background: gold;
+  color: black;
+}
+
+.btn-reject {
+  background: #444;
+  color: white;
+}
+
+.cookie-links {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.cookie-links a {
+  color: gold;
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.cookie-links a:hover {
+  opacity: 1;
+}
+
+/* Slide-down animation */
+.mobile-menu-enter {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+  max-height: 500px; /* Enough space for your menu */
+  opacity: 1;
+  transform: translateY(0);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu-exit {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+

@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <body class="bg-primary text-secondary font-body">
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4 bg-black border-b border-gold sticky top-0 z-50">
+  <header class="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4 bg-black border-b border-gold sticky top-0 z-[9000]">
     <a href="#home" class="flex items-center gap-3">
       <img src="./media/impilo_logo.png" width="60" height="60" alt="IMPILO Logo">
       <div class="leading-tight">
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   </header>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden flex-col bg-black text-secondary p-6 border-b border-gold md:hidden space-y-2">
+  <div id="mobileMenu" class="hidden flex-col bg-black text-secondary p-6 border-b border-gold md:hidden sticky top-0 z-[9000]space-y-2">
     <a href="#home" class="py-2 hover:text-gold transition">Home</a>
     <a href="#services" class="py-2 hover:text-gold transition">Services</a>
     <a href="#jozi-fashion" class="py-2 hover:text-gold transition">Jozi Fashion</a>
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h2 class="text-4xl font-heading font-bold text-gold">IMPILO Magazine: Latest Issue</h2>
             <p class="text-lg max-w-xl">Discover bold stories in fashion, lifestyle, and culture that shape our generation. Experience Impilo in its purest, most dynamic form.</p>
             <div class="flex flex-row items-center gap-4">
-              <a href="https://impilomag.co.za/media/mag_cover.png" target="_blank" class="btn bg-gold text-black hover:bg-black hover:text-gold border-none">
+              <a href="https://impilomag.co.za" target="_blank" class="btn bg-gold text-black hover:bg-black hover:text-gold border-none">
                 Read Issue <i class="pl-2 fa-solid fa-book-open"></i>
               </a>
               <a href="#subscribe" class="btn bg-primary border border-gold text-gold hover:bg-gold hover:text-black">
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h2 class="text-4xl font-heading font-bold text-gold">Culture & Creativity</h2>
             <p class="text-lg max-w-xl">From Jozi streets to global runways — dive into our deep features on African innovation and cultural expression.</p>
             <div class="flex flex-row items-center gap-4">
-              <a href="https://impilomag.co.za/media/genesis.jpg" target="_blank" class="btn bg-gold text-black hover:bg-black hover:text-gold border-none">
+              <a href="https://impilomag.co.za" target="_blank" class="btn bg-gold text-black hover:bg-black hover:text-gold border-none">
                 Read Issue <i class="pl-2 fa-solid fa-book-open"></i>
               </a>
               <a href="#subscribe" class="btn bg-primary border border-gold text-gold hover:bg-gold hover:text-black">
@@ -208,6 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="item" data-index="4">
         <img src="https://github.com/TommyTeaVee/ImpiloV2/blob/wise-K/public/Impilo_cover.png?raw=true" alt="Issue 5" class="w-64 h-72 object-cover rounded-xl cursor-pointer">
+      </div>
+      <div class="item" data-index="5">
+        <img src="./media/mag_cover.png" alt="Issue 6" class="w-64 h-72 object-cover rounded-xl cursor-pointer">
       </div>
     </div>
     <div class="flex flex-row gap-3 pt-4">
@@ -247,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
               <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Sponsored Visual Campaigns</h3>
               <p class="text-gray-300">Cinematic storytelling campaigns for brands, combining fashion, lifestyle, and cultural narratives.</p>
-              <img src="./media/monster.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+              <img src="https://d1zrm2iszdbieq.cloudfront.net/assets/models_land/75.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
             </div>
           </li>
           <!-- Card 2 -->
@@ -255,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
               <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Branded Content Partnerships</h3>
               <p class="text-gray-300">Collaborative short films, behind-the-scenes videos, and brand integrations that resonate with audiences.</p>
-              <img src="./media/brand_power.png" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+              <img src="./media/monster.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
             </div>
           </li>
           <!-- Card 3 -->
@@ -271,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
               <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Digital Merch & Tip Jar</h3>
               <p class="text-gray-300">Enable fans to support creators with digital products, tips, and subscription experiences.</p>
-              <img src="./media/mag_banner.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+              <img src="https://d1zrm2iszdbieq.cloudfront.net/assets/models_land/83.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
             </div>
           </li>
           <!-- Card 5 -->
@@ -279,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
               <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Creative Production Services</h3>
               <p class="text-gray-300">Full-service production including VFX, editing, storyboarding, and cinematic video creation.</p>
-              <img src="./media/pan.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+              <img src="https://d1zrm2iszdbieq.cloudfront.net/assets/models_land/74.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
             </div>
           </li>
           <!-- Card 6 -->
@@ -287,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="bg-gray-900   block max-w-sm  rounded-base rounded shadow-xs hover:scale-105 transition-transform duration-300">
               <h3 class="text-2xl font-semibold text-yellow-500 mb-4">Streaming & Digital Content</h3>
               <p class="text-gray-300">Exclusive access to podcasts, documentaries, fashion shows, and lifestyle content on-demand.</p>
-              <img src="./media/cover1.png" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
+              <img src="https://d1zrm2iszdbieq.cloudfront.net/assets/models_land/11.jpg" alt="Model" class="mt-4 rounded-lg object-cover w-full h-48">
             </div>
           </li>
         </ul>
