@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Impilo Streaming Services | IMPILO Magazine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#d4af37',
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background: #000;
+      color: white;
+      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .gold-glow {
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.5),
+        0 0 30px rgba(212,175,55,0.25);
+    }
+
+    .glass-panel {
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .luxury-card {
+      background: linear-gradient(
+        to bottom,
+        rgba(15,15,15,0.95),
+        rgba(0,0,0,0.95)
+      );
+
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 30px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .luxury-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212,175,55,0.7);
+      box-shadow: 0 20px 60px rgba(212,175,55,0.12);
+    }
+
+    .luxury-card img {
+      transition: transform 0.6s ease;
+    }
+
+    .luxury-card:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+<!-- IMPILO DIGITAL MAGAZINE RATE CARD -->
+<!-- IMPILO DIGITAL MAGAZINE RATE CARD -->
+<section class="relative bg-black text-white py-24 px-4 overflow-hidden border-t border-gold/20">
+
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0 opacity-20">
+    <img
+      src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2200&auto=format&fit=crop"
+      class="w-full h-full object-cover"
+      alt="IMPILO Magazine"
+    />
+  </div>
+
+  <div class="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+
+    <!-- HERO -->
+    <div class="text-center border border-gold/40 bg-black/70 backdrop-blur-md p-8 sm:p-12 mb-16">
+
+      <p class="uppercase tracking-[0.35em] text-xs text-gray-500 mb-5">
+        IMPILO DIGITAL MAGAZINE
+      </p>
+
+      <h2 class="text-5xl sm:text-6xl font-heading text-gold mb-6 leading-tight">
+        Advertising & Brand<br>
+        Partnership Packages
+      </h2>
+
+      <p class="text-gray-300 leading-8 text-sm sm:text-base max-w-4xl mx-auto">
+        Connect your brand with a curated audience through premium digital magazine placements,
+        interactive storytelling, fashion culture and cinematic advertising experiences.
+      </p>
+
+    </div>
+
+    <!-- RATE CARDS -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-20">
+
+      <!-- BRONZE -->
+      <article class="group bg-gradient-to-b from-zinc-900 to-black border border-gold/20 rounded-[28px] overflow-hidden hover:border-gold/70 hover:-translate-y-2 transition-all duration-500">
+
+        <div class="p-8 text-center">
+
+          <p class="uppercase tracking-[0.25em] text-[10px] text-gray-500 mb-4">
+            STARTER VISIBILITY
+          </p>
+
+          <h3 class="text-3xl font-heading text-gold mb-5">
+            Bronze
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7 mb-8">
+            Entry-level brand exposure for small businesses, startups and emerging creatives.
+          </p>
+
+          <ul class="text-sm text-gray-300 space-y-4 mb-10">
+            <li>Quarter-page advert</li>
+            <li>Social media mention</li>
+            <li>Magazine visibility</li>
+          </ul>
+
+          <a
+            href="mailto:info@impilomag.co.za?subject=Bronze Advertising Package"
+            class="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-gold text-gold text-xs uppercase tracking-[0.18em] hover:bg-gold hover:text-black transition duration-300"
+          >
+            Request Package
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- SILVER -->
+      <article class="group bg-gradient-to-b from-zinc-900 to-black border border-gold/20 rounded-[28px] overflow-hidden hover:border-gold/70 hover:-translate-y-2 transition-all duration-500">
+
+        <div class="p-8 text-center">
+
+          <p class="uppercase tracking-[0.25em] text-[10px] text-gray-500 mb-4">
+            GROWTH EXPOSURE
+          </p>
+
+          <h3 class="text-3xl font-heading text-gold mb-5">
+            Silver
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7 mb-8">
+            Expanded digital visibility for growing brands looking to reach fashion and lifestyle audiences.
+          </p>
+
+          <ul class="text-sm text-gray-300 space-y-4 mb-10">
+            <li>Half-page advert</li>
+            <li>Newsletter mention</li>
+            <li>Brand support campaign</li>
+          </ul>
+
+          <a
+            href="mailto:info@impilomag.co.za?subject=Silver Advertising Package"
+            class="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-gold text-gold text-xs uppercase tracking-[0.18em] hover:bg-gold hover:text-black transition duration-300"
+          >
+            Request Package
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- GOLD -->
+      <article class="relative overflow-hidden group bg-gradient-to-b from-black to-zinc-900 border-2 border-gold rounded-[28px] hover:-translate-y-2 transition-all duration-500 shadow-2xl shadow-yellow-900/20">
+
+        <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gold/20 to-transparent"></div>
+
+        <div class="relative z-10 p-8 text-center">
+
+          <p class="uppercase tracking-[0.25em] text-[10px] text-gray-400 mb-4">
+            PREMIUM BRANDING
+          </p>
+
+          <h3 class="text-3xl font-heading text-gold mb-5">
+            Gold
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7 mb-8">
+            Premium full-page storytelling and interactive digital magazine placement.
+          </p>
+
+          <ul class="text-sm text-gray-300 space-y-4 mb-10">
+            <li>Full-page advert</li>
+            <li>Clickable interactive links</li>
+            <li>Newsletter inclusion</li>
+            <li>Social amplification</li>
+          </ul>
+
+          <a
+            href="mailto:info@impilomag.co.za?subject=Gold Advertising Package"
+            class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f3d67a] text-black text-xs uppercase tracking-[0.18em] font-semibold hover:scale-105 transition duration-300"
+          >
+            Request Package
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- PLATINUM -->
+      <article class="group bg-gradient-to-b from-zinc-900 to-black border border-gold/20 rounded-[28px] overflow-hidden hover:border-gold/70 hover:-translate-y-2 transition-all duration-500">
+
+        <div class="p-8 text-center">
+
+          <p class="uppercase tracking-[0.25em] text-[10px] text-gray-500 mb-4">
+            CAMPAIGN EXPERIENCE
+          </p>
+
+          <h3 class="text-3xl font-heading text-gold mb-5">
+            Platinum
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7 mb-8">
+            Interactive campaigns designed for premium brands seeking stronger audience engagement.
+          </p>
+
+          <ul class="text-sm text-gray-300 space-y-4 mb-10">
+            <li>Sponsored 2-page spread</li>
+            <li>Embedded video / GIF</li>
+            <li>Influencer or model feature</li>
+            <li>Social amplification</li>
+          </ul>
+
+          <a
+            href="mailto:info@impilomag.co.za?subject=Platinum Advertising Package"
+            class="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-gold text-gold text-xs uppercase tracking-[0.18em] hover:bg-gold hover:text-black transition duration-300"
+          >
+            Request Package
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- EXCLUSIVE -->
+      <article class="relative overflow-hidden group border-2 border-gold rounded-[28px] bg-black hover:-translate-y-2 transition-all duration-500">
+
+        <div class="absolute inset-0 bg-gradient-to-b from-gold/20 via-transparent to-transparent"></div>
+
+        <div class="relative z-10 p-8 text-center">
+
+          <p class="uppercase tracking-[0.25em] text-[10px] text-gray-400 mb-4">
+            LUXURY PARTNERSHIP
+          </p>
+
+          <h3 class="text-3xl font-heading text-gold mb-5">
+            Exclusive
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7 mb-8">
+            High-level brand integration and premium visibility across the IMPILO ecosystem.
+          </p>
+
+          <ul class="text-sm text-gray-300 space-y-4 mb-10">
+            <li>Prime cover placement</li>
+            <li>Interactive campaign package</li>
+            <li>Digital takeover options</li>
+            <li>Premium partnership visibility</li>
+          </ul>
+
+          <a
+            href="mailto:info@impilomag.co.za?subject=Exclusive Partnership Package"
+            class="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f3d67a] text-black text-xs uppercase tracking-[0.18em] font-semibold hover:scale-105 transition duration-300"
+          >
+            Request Proposal
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <!-- DIGITAL FEATURES -->
+    <div class="border-y border-gold/30 py-14 mb-20">
+
+      <div class="text-center mb-12">
+
+        <p class="uppercase tracking-[0.3em] text-xs text-gray-500 mb-4">
+          INTERACTIVE FEATURES
+        </p>
+
+        <h3 class="text-4xl font-heading text-gold">
+          Premium Digital Advertising Tools
+        </h3>
+
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+
+        <div>
+          <i class="fa-solid fa-link text-4xl text-gold mb-5"></i>
+          <p class="text-gray-300">Clickable Links</p>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-play text-4xl text-gold mb-5"></i>
+          <p class="text-gray-300">Embedded Video & GIFs</p>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-window-maximize text-4xl text-gold mb-5"></i>
+          <p class="text-gray-300">Interactive Pop-Out Panels</p>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-bag-shopping text-4xl text-gold mb-5"></i>
+          <p class="text-gray-300">Shoppable Flipbook Ads</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- WHY IMPILO -->
+    <div class="grid lg:grid-cols-[1.2fr,0.8fr] gap-10 items-center">
+
+      <div class="border border-gold/30 bg-black/60 backdrop-blur-md p-10">
+
+        <h3 class="text-4xl font-heading text-gold mb-8">
+          Why Partner With IMPILO?
+        </h3>
+
+        <ul class="space-y-5 text-gray-300 leading-8 text-sm sm:text-base">
+          <li>• Premium fashion, lifestyle and creative audience positioning.</li>
+          <li>• Interactive digital magazine engagement through clickable advertising experiences.</li>
+          <li>• Amplification across magazine, social media, streaming and newsletter platforms.</li>
+          <li>• Creative storytelling through cinematic visuals and editorial production.</li>
+          <li>• Flexible partnership opportunities tailored to brand goals and audience reach.</li>
+        </ul>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="relative overflow-hidden border border-gold/40 bg-gradient-to-b from-zinc-900 to-black p-10 text-center">
+
+        <div class="absolute inset-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1600&auto=format&fit=crop"
+            class="w-full h-full object-cover"
+            alt="Advertising"
+          />
+        </div>
+
+        <div class="relative z-10">
+
+          <h3 class="text-4xl font-heading text-gold mb-6">
+            Request Media Kit
+          </h3>
+
+          <p class="text-gray-300 leading-8 mb-8 text-sm sm:text-base">
+            Contact the IMPILO team to receive partnership information, campaign opportunities and custom advertising proposals.
+          </p>
+
+          <div class="flex flex-col gap-4 items-center">
+
+            <a
+              href="mailto:info@impilomag.co.za"
+              class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f3d67a] text-black text-xs uppercase tracking-[0.18em] font-semibold hover:scale-105 transition duration-300"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              Request Media Kit
+            </a>
+
+            <p class="text-xs text-gray-400">
+              info@impilomag.co.za
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+</body>
+</html>
