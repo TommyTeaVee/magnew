@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Impilo Modelling Agency | IMPILO Magazine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#d4af37',
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background: #000;
+      color: white;
+      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hero-overlay {
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.55),
+          rgba(0,0,0,0.85)
+        );
+    }
+
+    .gold-glow {
+      text-shadow:
+        0 0 10px rgba(212,175,55,0.5),
+        0 0 30px rgba(212,175,55,0.25);
+    }
+
+    .glass-panel {
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .luxury-card {
+      background: linear-gradient(
+        to bottom,
+        rgba(15,15,15,0.95),
+        rgba(0,0,0,0.95)
+      );
+
+      border: 1px solid rgba(212,175,55,0.15);
+      border-radius: 30px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .luxury-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(212,175,55,0.7);
+      box-shadow: 0 20px 60px rgba(212,175,55,0.12);
+    }
+
+    .luxury-card img {
+      transition: transform 0.6s ease;
+    }
+
+    .luxury-card:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="relative min-h-screen overflow-hidden">
+
+  <img
+    src="./media/thando.jpg"
+    class="absolute inset-0 w-full h-full object-cover"
+    alt="Impilo Modelling"
+  />
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-20 max-w-7xl mx-auto px-6 lg:px-20 py-24 grid lg:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <p class="uppercase tracking-[0.35em] text-xs text-gray-400 mb-5">
+        IMPILO MODELLING AGENCY
+      </p>
+
+      <h1 class="text-5xl lg:text-7xl font-heading text-white leading-tight mb-8 gold-glow">
+        Building<br>
+        Runway Icons<br>
+        For Modern Fashion
+      </h1>
+
+      <p class="text-gray-300 leading-8 text-sm sm:text-base max-w-2xl mb-10">
+        Professional model development, runway coaching, editorial placements and portfolio building for aspiring and established fashion talent.
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+
+        <div class="glass-panel rounded-full px-5 py-4 text-gold flex items-center gap-3">
+          <i class="fa-solid fa-person-walking"></i>
+          Runway Training
+        </div>
+
+        <div class="glass-panel rounded-full px-5 py-4 text-gold flex items-center gap-3">
+          <i class="fa-solid fa-camera"></i>
+          Editorial Shoots
+        </div>
+
+        <div class="glass-panel rounded-full px-5 py-4 text-gold flex items-center gap-3">
+          <i class="fa-solid fa-id-card"></i>
+          Portfolio Building
+        </div>
+
+        <div class="glass-panel rounded-full px-5 py-4 text-gold flex items-center gap-3">
+          <i class="fa-solid fa-star"></i>
+          Fashion Placements
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="glass-panel rounded-[40px] p-5">
+
+      <img
+        src="./media/mag_cover.png"
+        class="w-full h-[650px] object-cover rounded-[30px]"
+        alt="IMPILO Editorial"
+      />
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="py-20 bg-zinc-950">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-20">
+
+    <div class="text-center mb-16">
+
+      <p class="uppercase tracking-[0.35em] text-xs text-gray-500 mb-4">
+        MODEL SERVICES
+      </p>
+
+      <h2 class="text-4xl lg:text-5xl font-heading text-gold mb-6">
+        Fashion Development Services
+      </h2>
+
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+      <article class="luxury-card p-8">
+        <div class="w-16 h-16 rounded-2xl border border-gold text-gold flex items-center justify-center text-2xl mb-6">
+          <i class="fa-solid fa-person-walking"></i>
+        </div>
+
+        <h3 class="text-2xl font-heading text-gold mb-4">
+          Runway Coaching
+        </h3>
+
+        <p class="text-sm text-gray-300 leading-7">
+          Professional catwalk movement, confidence training and stage presentation.
+        </p>
+      </article>
+
+      <article class="luxury-card p-8">
+        <div class="w-16 h-16 rounded-2xl border border-gold text-gold flex items-center justify-center text-2xl mb-6">
+          <i class="fa-solid fa-camera-retro"></i>
+        </div>
+
+        <h3 class="text-2xl font-heading text-gold mb-4">
+          Editorial Photography
+        </h3>
+
+        <p class="text-sm text-gray-300 leading-7">
+          Luxury editorial campaigns and portfolio creation for modern models.
+        </p>
+      </article>
+
+      <article class="luxury-card p-8">
+        <div class="w-16 h-16 rounded-2xl border border-gold text-gold flex items-center justify-center text-2xl mb-6">
+          <i class="fa-solid fa-user-group"></i>
+        </div>
+
+        <h3 class="text-2xl font-heading text-gold mb-4">
+          Talent Representation
+        </h3>
+
+        <p class="text-sm text-gray-300 leading-7">
+          Fashion show placements, casting support and media representation.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>
