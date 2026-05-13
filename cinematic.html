@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>IMPILO Cinematic Advertising</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#d4af37',
+            primary: '#000000'
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body class="bg-black text-white font-body overflow-x-hidden">
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center overflow-hidden">
+
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2200&auto=format&fit=crop"
+        class="w-full h-full object-cover opacity-30"
+        alt="Cinematic Production"
+      />
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60"></div>
+
+    <!-- CONTENT -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-20 py-24 grid lg:grid-cols-2 gap-20 items-center">
+
+      <!-- LEFT -->
+      <div>
+
+        <p class="uppercase tracking-[0.35em] text-xs text-gray-500 mb-5">
+          IMPILO CINEMATIC ADVERTISING
+        </p>
+
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-heading text-gold leading-tight mb-8">
+          Cinematic Storytelling<br>
+          For Modern Brands
+        </h1>
+
+        <p class="text-lg text-gray-300 leading-9 mb-10 max-w-2xl">
+          We combine cinematic workflows, visual effects and immersive storytelling to create emotionally engaging advertisements that captivate audiences while delivering powerful brand vision.
+        </p>
+
+        <div class="flex flex-wrap gap-5">
+
+          <a
+            href="#workflow"
+            class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f3d67a] text-black text-xs uppercase tracking-[0.18em] font-semibold hover:scale-105 transition duration-300"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+            Explore Workflow
+          </a>
+
+          <a
+            href="#"
+            class="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-gold text-gold text-xs uppercase tracking-[0.18em] font-semibold hover:bg-gold hover:text-black transition duration-300"
+          >
+            <i class="fa-solid fa-play"></i>
+            Watch Showreel
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="relative">
+
+        <div class="relative overflow-hidden rounded-[40px] border border-gold/20 shadow-2xl">
+
+          <img
+            src="./media/vfx.png?q=80&w=1800&auto=format&fit=crop"
+            class="w-full h-[700px] object-cover"
+            alt="Film Production"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+          <!-- FLOATING PANEL -->
+          <div class="absolute bottom-8 left-8 right-8 bg-black/70 backdrop-blur-md border border-gold/20 rounded-3xl p-6">
+
+            <div class="flex items-center justify-between mb-5">
+
+              <div>
+                <p class="uppercase tracking-[0.2em] text-[10px] text-gray-500 mb-2">
+                  Visual Storytelling
+                </p>
+
+                <h3 class="text-3xl font-heading text-gold">
+                  Premium Cinematic Production
+                </h3>
+              </div>
+
+              <div class="w-16 h-16 rounded-2xl bg-gold text-black flex items-center justify-center text-2xl">
+                <i class="fa-solid fa-film"></i>
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 text-sm">
+
+              <div class="border border-gold/20 rounded-2xl p-4">
+                <p class="text-gray-500 mb-2">Commercials</p>
+                <p class="text-gold text-lg font-semibold">Brand Campaigns</p>
+              </div>
+
+              <div class="border border-gold/20 rounded-2xl p-4">
+                <p class="text-gray-500 mb-2">VFX</p>
+                <p class="text-gold text-lg font-semibold">Visual Effects</p>
+              </div>
+
+              <div class="border border-gold/20 rounded-2xl p-4">
+                <p class="text-gray-500 mb-2">Storytelling</p>
+                <p class="text-gold text-lg font-semibold">Emotional Impact</p>
+              </div>
+
+              <div class="border border-gold/20 rounded-2xl p-4">
+                <p class="text-gray-500 mb-2">Production</p>
+                <p class="text-gold text-lg font-semibold">Cinematic Workflow</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WORKFLOW -->
+  <section id="workflow" class="py-24 px-6 lg:px-20 border-t border-gold/20">
+
+    <div class="max-w-7xl mx-auto">
+
+      <!-- HEADER -->
+      <div class="text-center mb-20">
+
+        <p class="uppercase tracking-[0.35em] text-xs text-gray-500 mb-5">
+          OUR CINEMATIC WORKFLOW
+        </p>
+
+        <h2 class="text-5xl font-heading text-gold mb-6">
+          From Concept To Immersive Experience
+        </h2>
+
+        <p class="max-w-3xl mx-auto text-gray-300 leading-8">
+          Every campaign is crafted through a cinematic production pipeline designed to elevate storytelling, visual emotion and audience immersion.
+        </p>
+
+      </div>
+
+      <!-- STEPS -->
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+        <!-- STEP 1 -->
+        <div class="border border-gold/20 rounded-[30px] p-8 bg-zinc-900/50">
+
+          <div class="w-16 h-16 rounded-2xl bg-gold text-black flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+
+          <h3 class="text-2xl font-heading text-gold mb-4">
+            Creative Direction
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7">
+            We develop visual concepts, storyboards and cinematic narratives aligned with your brand identity and campaign goals.
+          </p>
+
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="border border-gold/20 rounded-[30px] p-8 bg-zinc-900/50">
+
+          <div class="w-16 h-16 rounded-2xl bg-gold text-black flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-video"></i>
+          </div>
+
+          <h3 class="text-2xl font-heading text-gold mb-4">
+            Cinematic Production
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7">
+            Professional filming techniques, lighting setups and camera movement create emotionally engaging visual experiences.
+          </p>
+
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="border border-gold/20 rounded-[30px] p-8 bg-zinc-900/50">
+
+          <div class="w-16 h-16 rounded-2xl bg-gold text-black flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+
+          <h3 class="text-2xl font-heading text-gold mb-4">
+            Visual Effects
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7">
+            Advanced visual effects, motion graphics and cinematic compositing transform campaigns into immersive digital experiences.
+          </p>
+
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="border border-gold/20 rounded-[30px] p-8 bg-zinc-900/50">
+
+          <div class="w-16 h-16 rounded-2xl bg-gold text-black flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-earth-africa"></i>
+          </div>
+
+          <h3 class="text-2xl font-heading text-gold mb-4">
+            Digital Distribution
+          </h3>
+
+          <p class="text-sm text-gray-300 leading-7">
+            Campaigns are distributed through IMPILO’s interactive magazine ecosystem, livestream platforms and digital media channels.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VALUE SECTION -->
+  <section class="py-24 px-6 lg:px-20 bg-gradient-to-b from-black to-zinc-950 border-t border-gold/20">
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+
+      <!-- LEFT -->
+      <div>
+
+        <p class="uppercase tracking-[0.35em] text-xs text-gray-500 mb-5">
+          WHY IT WORKS
+        </p>
+
+        <h2 class="text-5xl font-heading text-gold mb-8 leading-tight">
+          We Don't Just Create Ads.<br>
+          We Create Experiences.
+        </h2>
+
+        <p class="text-gray-300 leading-9 mb-8">
+          Modern audiences ignore traditional advertising. IMPILO uses cinematic storytelling and immersive visual culture to emotionally connect audiences with brands through memorable experiences.
+        </p>
+
+        <div class="space-y-5">
+
+          <div class="flex gap-4 items-start">
+            <i class="fa-solid fa-check text-gold mt-1"></i>
+            <p class="text-gray-300">
+              Cinematic emotional storytelling
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start">
+            <i class="fa-solid fa-check text-gold mt-1"></i>
+            <p class="text-gray-300">
+              High-end visual identity development
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start">
+            <i class="fa-solid fa-check text-gold mt-1"></i>
+            <p class="text-gray-300">
+              Interactive digital audience engagement
+            </p>
+          </div>
+
+          <div class="flex gap-4 items-start">
+            <i class="fa-solid fa-check text-gold mt-1"></i>
+            <p class="text-gray-300">
+              Premium cinematic production quality
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="relative">
+
+        <img
+          src="./media/vfx.png  ?q=80&w=1800&auto=format&fit=crop"
+          class="rounded-[40px] border border-gold/20 shadow-2xl"
+          alt="Visual Storytelling"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
+

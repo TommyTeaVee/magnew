@@ -182,40 +182,72 @@ function setupLearnMoreToggles() {
 function setupFlipsterCarousels() {
   if (typeof $ === "undefined" || typeof $.fn.flipster === "undefined") return;
 
-  // Services flipster
+  // =========================
+  // SERVICES FLIPSTER
+  // =========================
   if ($("#flipster-services").length) {
     $("#flipster-services").flipster({
-      style: "coverflow",
-      spacing: -0.5,
+      style: "carousel",
+      spacing: -0.25,
       loop: true,
       buttons: true,
+      nav: false,
       start: 0,
-      autoplay: 4000,
+
+      // IMPORTANT
+      autoplay: false,
+
+      scrollwheel: false,
+      keyboard: true,
+      touch: true,
+
       onItemSwitch: function (currentItem) {
-        $(".flipster li").removeClass("shadow-2xl border-yellow-500 border-2");
-        $(currentItem).find(".max-w-xs").addClass("shadow-2xl border-yellow-500 border-2");
+        $("#flipster-services li .group").removeClass(
+          "shadow-[0_0_40px_rgba(212,175,55,0.35)] border-gold"
+        );
+
+        $(currentItem)
+          .find(".group")
+          .addClass(
+            "shadow-[0_0_40px_rgba(212,175,55,0.35)] border-gold"
+          );
       },
     });
   }
 
-  // Runway flipster
+  // =========================
+  // RUNWAY FLIPSTER
+  // =========================
   if ($("#flipster-runway").length) {
     $("#flipster-runway").flipster({
-      style: "coverflow",
-      spacing: -0.5,
+      style: "carousel",
+      spacing: -0.3,
       loop: true,
       buttons: true,
-      autoplay: 3000,
+      nav: false,
       start: 0,
+
+      // IMPORTANT
+      autoplay: false,
+
       scrollwheel: true,
+      keyboard: true,
+      touch: true,
+
       onItemSwitch: function (currentItem) {
-        $(".flipster li").removeClass("shadow-2xl border-gold border-2");
-        $(currentItem).find(".card").addClass("shadow-2xl border-gold border-2");
+        $("#flipster-runway li .card").removeClass(
+          "shadow-[0_0_35px_rgba(212,175,55,0.3)] border border-gold"
+        );
+
+        $(currentItem)
+          .find(".card")
+          .addClass(
+            "shadow-[0_0_35px_rgba(212,175,55,0.3)] border border-gold"
+          );
       },
     });
   }
 }
-
 /* =========================
    HERO SLIDER + THUMB SLIDER
    (#main-slider + #slider-thumb)

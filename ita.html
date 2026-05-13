@@ -510,50 +510,30 @@
   <!-- =========================
        FOOTER
   ========================== -->
-  <footer class="bg-black border-t border-gold py-10 text-center">
-    <div class="flex flex-col items-center gap-3">
-      <img
-        src="https://impilomag.co.za/media/impilo_logo.png"
-        alt="IMPILO Magazine logo"
-        class="w-14 h-14 object-contain"
-      />
-      <h3 class="text-gold font-heading text-xl">Impilo Digital Media Group</h3>
-      <p class="text-xs text-gray-400">
-        &copy; 2025 Impilo Modelling Agency · IMPILO Magazine. All rights reserved.
-      </p>
-
-      <nav class="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-300">
-        <a href="index.html#home" class="hover:text-gold transition">Home</a>
-        <a href="index.html#jozi-fashion" class="hover:text-gold transition">Jozi Fashion</a>
-        <a href="#top" class="text-gold transition">Modelling</a>
-        <a href="index.html#streaming" class="hover:text-gold transition">Streaming</a>
-        <a href="catalogue.html" class="hover:text-gold transition">Catalogue</a>
-        <a href="index.html#subscribe" class="hover:text-gold transition">Subscribe</a>
-        <a href="privacy.html" class="hover:text-gold transition">Privacy &amp; Ad Policy</a>
-      </nav>
-
-      <div class="flex gap-5 mt-4 text-lg text-gold">
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gold py-10 sm:py-12 text-center px-4">
+    <div class="flex flex-col items-center gap-4">
+      <img src="./media/impilo_logo.png" width="60" height="60" alt="IMPILO Logo">
+      <h3 class="text-gold font-heading text-lg sm:text-xl">Impilo Digital Media Group</h3>
+      <p class="text-secondary text-xs sm:text-sm">&copy; 2025 IMPILO Magazine. All rights reserved.</p>
+      <div class="flex gap-5 mt-3 text-lg text-gold">
         <a href="https://facebook.com/impilomag" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://instagram.com/impilomag" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://twitter.com/impilomag" target="_blank"><i class="fab fa-x-twitter"></i></a>
         <a href="https://www.youtube.com/@impilomag" target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
+         <div class="text-xs text-gray-400 space-x-2">
+      <a href="privacy-policy.html" class="link link-warning text-gold">Privacy Policy</a> |
+      <a href="cookie-policy.html" class="link link-warning text-gold">Cookie Policy</a> |
+      <a href="tos.html" class="link link-warning text-gold">Terms & Conditions</a>
+    </div>
     </div>
   </footer>
 
-  <!-- SHARED SCRIPT (mobile menu, etc.) -->
+  <!-- Scripts -->
   <script src="./script.js"></script>
-
-  <!-- Learn more buttons toggle (specific to this page) -->
-  <script>
-    $(".learn-btn").on("click", function () {
-      const target = $(this).data("target");
-      $(target).slideToggle(200);
-      const $btn = $(this);
-      const isVisible = $(target).is(":visible");
-      $btn.text(isVisible ? "Hide Details" : "Learn More & Apply");
-    });
-  </script>
+  <!-- include cookie modal here -->
+<div w3-include-html="./cookie-modal.html"></div>
+<div w3-include-html="./banner-modal.html"></div>
 </body>
 </html>
-
