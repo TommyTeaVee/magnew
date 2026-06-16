@@ -38,13 +38,53 @@ media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Cov
   </script>
 </head>
 <body>
+    <!-- Header -->
+  <header class="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4 bg-black border-b border-gold sticky top-0 z-[9000]">
+    <a href="#home" class="flex items-center gap-3">
+      <img src="./media/impilo_logo.png" width="60" height="60" alt="IMPILO Logo">
+      <div class="leading-tight">
+        <h1 class="text-xl sm:text-2xl font-heading text-gold">IMPILO Magazine</h1>
+        <p class="text-[11px] sm:text-xs text-gray-300 uppercase tracking-[0.18em]">
+          Impilo Digital Media Group
+        </p>
+      </div>
+    </a>
+    <!-- Toast Notification Container -->
+<div id="toastContainer" class="fixed top-6 right-6 z-50 flex flex-col gap-3"></div>
+
+    <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl"><i class="fas fa-bars"></i></button>
+    <nav id="mainNav" class="hidden md:flex gap-4 lg:gap-6 text-secondary font-semibold text-sm lg:text-base">
+      <a href="#home" class="hover:text-gold transition">Home</a>
+      <a href="#services" class="hover:text-gold transition">Services</a>
+      <a href="#jozi-fashion" class="hover:text-gold transition">Jozi Fashion</a>
+      <a href="./ita.html" class="hover:text-gold transition">Talent</a>
+      <a href="#streaming" class="hover:text-gold transition">Streaming</a>
+      <a href="./catalogue.html" class="hover:text-gold transition">Catalogue</a>
+      <a href="#subscribe" class="hover:text-gold transition">Subscribe</a>
+    </nav>
+   
+
+
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden flex-col bg-black text-secondary p-6 border-b border-gold md:hidden sticky top-0 z-[9000]space-y-2">
+    <a href="#home" class="py-2 hover:text-gold transition">Home</a>
+    <a href="#services" class="py-2 hover:text-gold transition">Services</a>
+    <a href="#jozi-fashion" class="py-2 hover:text-gold transition">Jozi Fashion</a>
+    <a href="./ita.html" class="py-2 hover:text-gold transition">Talent</a>
+    <a href="#streaming" class="py-2 hover:text-gold transition">Streaming</a>
+    <a href="./catalogue.html" class="py-2 hover:text-gold transition">Catalogue</a>
+    <a href="#subscribe" class="py-2 hover:text-gold transition">Subscribe</a>
+  </div>
+
 <!-- BREVITY PREMIUM STUDIO -->
 <section class="relative overflow-hidden bg-black text-white py-24 px-4 border-t border-gold/20">
 
   <!-- BACKGROUND -->
   <div class="absolute inset-0 opacity-20">
     <img
-      src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2200&auto=format&fit=crop"
+      src="./media/obres.png?text=Brevity+Studio"
       class="w-full h-full object-cover"
       alt="Brevity Studio"
     />
@@ -62,12 +102,12 @@ media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Cov
       </p>
 
       <h2 class="text-5xl sm:text-6xl lg:text-7xl font-heading text-gold mb-8 leading-tight">
-        Professional Browser-Based<br>
-        Broadcasting Infrastructure
+        Online<br>
+        Broadcasting Platform
       </h2>
 
       <p class="text-gray-300 leading-8 text-sm sm:text-lg max-w-4xl mx-auto mb-10">
-        Brevity transforms browser streaming into a premium collaborative production ecosystem for creators, media companies, fashion events, agencies and modern digital broadcasting teams.
+        Brevity transforms traditional broadcasting into a premium collaborative production ecosystem for creators, media companies, fashion events, agencies and modern digital broadcasting teams.
       </p>
 
       <div class="flex flex-wrap justify-center gap-4">
@@ -101,7 +141,7 @@ media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Cov
         <div class="relative overflow-hidden h-72">
 
           <img
-            src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1600&auto=format&fit=crop"
+            src="https://d1zrm2iszdbieq.cloudfront.net/assets/liveshow.png?q=80&w=1600&auto=format&fit=crop"
             alt="Multi-role production"
             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
           />
@@ -121,7 +161,7 @@ media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Cov
           </p>
 
           <h3 class="text-3xl font-heading text-gold mb-4">
-            Multi-Role Studio System
+            Multi-Role Studio  Platform
           </h3>
 
           <p class="text-sm text-gray-300 leading-7 mb-6">
@@ -144,7 +184,7 @@ media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Cov
         <div class="relative overflow-hidden h-72">
 
           <img
-            src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1600&auto=format&fit=crop"
+            src="https://d1zrm2iszdbieq.cloudfront.net/assets/rooftop.png?q=80&w=1600&auto=format&fit=crop"
             alt="Broadcasting infrastructure"
             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
           />
@@ -164,11 +204,11 @@ media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Cov
           </p>
 
           <h3 class="text-3xl font-heading text-gold mb-4">
-            Premium Streaming Infrastructure
+            Premium Streaming Cloud
           </h3>
 
           <p class="text-sm text-gray-300 leading-7 mb-6">
-            Browser-native broadcasting with overlays, multi-camera switching, audience engagement and professional remote production workflows.
+           Online broadcasting with overlays, multi-camera switching, audience engagement and professional remote production workflows.
           </p>
 
           <div class="flex flex-wrap gap-2 text-[11px]">
@@ -187,7 +227,7 @@ media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Cov
         <div class="relative overflow-hidden h-72">
 
           <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop"
+            src="https://d1zrm2iszdbieq.cloudfront.net/assets/fas.jpeg?q=80&w=1600&auto=format&fit=crop"
             alt="Cloud production"
             class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
           />
@@ -297,7 +337,7 @@ media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Cov
           class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f3d67a] text-black text-xs uppercase tracking-[0.18em] font-semibold hover:scale-105 transition duration-300"
         >
           <i class="fa-solid fa-arrow-right"></i>
-          Request Demo
+          Check our Demo
         </a>
 
         <a
