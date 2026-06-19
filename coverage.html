@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glance Coverage | IMPILO Digital Media</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- TAILWIND -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        black: "#000",
+        gold: "#d4af37"
+      },
+      fontFamily: {
+        heading: ["Playfair Display", "serif"],
+        body: ["Montserrat", "sans-serif"]
+      }
+    }
+  }
+}
+</script>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body class="bg-black text-white font-body">
+
+<!-- NAV -->
+<header class="fixed w-full top-0 z-50 bg-black/70 backdrop-blur border-b border-gold/20">
+  <div class="flex justify-between items-center px-6 lg:px-20 py-4">
+
+    <h1 class="text-gold font-heading text-xl">GLANCE COVERAGE</h1>
+
+    <nav class="hidden md:flex gap-8 text-sm text-gray-300">
+      <a href="#overview" class="hover:text-gold">Overview</a>
+      <a href="#workflow" class="hover:text-gold">Workflow</a>
+      <a href="#services" class="hover:text-gold">Services</a>
+      <a href="#pricing" class="hover:text-gold">Pricing</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative h-screen flex items-center justify-center text-center">
+
+  <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+       class="absolute inset-0 w-full h-full object-cover opacity-30">
+
+  <div class="absolute inset-0 bg-gradient-to-b from-black via-black/70 to-black"></div>
+
+  <div class="relative z-10 max-w-5xl px-6">
+
+    <p class="text-gold tracking-[0.4em] text-xs mb-4">
+      CINEMATIC EVENT BROADCAST SYSTEM
+    </p>
+
+    <h1 class="text-5xl md:text-7xl font-heading text-gold leading-tight">
+      We Don’t Capture Events<br>
+      We Broadcast Moments
+    </h1>
+
+    <p class="text-gray-300 mt-6">
+      Glance Coverage turns real-world events into cinematic digital experiences powered by IMPILO.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" class="py-24 px-6 lg:px-20">
+
+  <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+    <img src="https://images.unsplash.com/photo-1526481280695-3c687fd5432c"
+         class="rounded-3xl border border-gold/20">
+
+    <div>
+      <h2 class="text-4xl font-heading text-gold mb-6">What is Glance Coverage?</h2>
+      <p class="text-gray-300 leading-7 mb-4">
+        A modern production system that captures fashion shows, corporate events, concerts and brand activations in cinematic form.
+      </p>
+      <p class="text-gray-400 leading-7">
+        We combine multi-camera filming, storytelling, and live direction into one seamless pipeline.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WORKFLOW (VISUAL HEAVY) -->
+<section id="workflow" class="py-24 px-6 lg:px-20 bg-zinc-950">
+
+  <h2 class="text-center text-4xl font-heading text-gold mb-14">
+    Glance Coverage Workflow
+  </h2>
+
+  <div class="grid md:grid-cols-4 gap-6">
+
+    <!-- STEP 1 -->
+    <div class="text-center">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+           class="rounded-2xl h-52 w-full object-cover mb-4">
+      <h3 class="text-gold font-heading mb-2">Pre-Production</h3>
+      <p class="text-gray-400 text-sm">Planning camera angles, lighting and story direction.</p>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="text-center">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+           class="rounded-2xl h-52 w-full object-cover mb-4">
+      <h3 class="text-gold font-heading mb-2">On-Site Capture</h3>
+      <p class="text-gray-400 text-sm">Multi-camera cinematic event recording in real time.</p>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="text-center">
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+           class="rounded-2xl h-52 w-full object-cover mb-4">
+      <h3 class="text-gold font-heading mb-2">Live Direction</h3>
+      <p class="text-gray-400 text-sm">Real-time switching, storytelling and broadcast control.</p>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="text-center">
+      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0"
+           class="rounded-2xl h-52 w-full object-cover mb-4">
+      <h3 class="text-gold font-heading mb-2">Delivery</h3>
+      <p class="text-gray-400 text-sm">Edited highlights, reels and broadcast-ready content.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-24 px-6 lg:px-20">
+
+  <h2 class="text-center text-4xl font-heading text-gold mb-14">
+    Production Layers
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="border border-gold/20 p-8 rounded-2xl">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+           class="rounded-xl h-40 w-full object-cover mb-4">
+      <h3 class="text-gold font-heading mb-2">Cinematic Capture</h3>
+      <p class="text-gray-400 text-sm">High-end visual storytelling with professional rigs.</p>
+    </div>
+
+    <div class="border border-gold/20 p-8 rounded-2xl">
+      <img src="https://images.unsplash.com/photo-1526481280695-3c687fd5432c"
+           class="rounded-xl h-40 w-full object-cover mb-4">
+      <h3 class="text-gold font-heading mb-2">Broadcast Engine</h3>
+      <p class="text-gray-400 text-sm">Live switching and multi-stream distribution.</p>
+    </div>
+
+    <div class="border border-gold/20 p-8 rounded-2xl">
+      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+           class="rounded-xl h-40 w-full object-cover mb-4">
+      <h3 class="text-gold font-heading mb-2">Content Factory</h3>
+      <p class="text-gray-400 text-sm">Instant social media content creation pipeline.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-24 px-6 lg:px-20 bg-zinc-950">
+
+  <h2 class="text-center text-4xl font-heading text-gold mb-14">
+    Glance Coverage Pricing
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="p-8 border border-gold/20 rounded-2xl">
+      <h3 class="text-gold font-heading">Essential Glance</h3>
+      <p class="text-3xl mt-4">R6,000</p>
+      <p class="text-gray-400 text-sm mt-4">Single camera + highlight edit</p>
+    </div>
+
+    <div class="p-8 border border-gold rounded-2xl">
+      <h3 class="text-gold font-heading">Studio Glance</h3>
+      <p class="text-3xl mt-4">R15,000</p>
+      <p class="text-gray-300 text-sm mt-4">Multi-camera + BTS + reels</p>
+    </div>
+
+    <div class="p-8 border border-gold/20 rounded-2xl">
+      <h3 class="text-gold font-heading">Cinematic Glance</h3>
+      <p class="text-3xl mt-4">R30,000+</p>
+      <p class="text-gray-400 text-sm mt-4">Full broadcast + documentary + live direction</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="py-24 text-center">
+
+  <h2 class="text-4xl font-heading text-gold mb-6">
+    Turn Your Event Into Cinema
+  </h2>
+
+  <a href="./contact.html"
+     class="px-8 py-4 bg-gold text-black rounded-full font-semibold hover:scale-105 transition">
+    Book Glance Coverage
+  </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 text-center text-gray-500 border-t border-gold/20">
+  © 2026 IMPILO • Glance Coverage System
+</footer>
+
+</body>
+</html>

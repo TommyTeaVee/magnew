@@ -1,359 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>IMPILO Magazine</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-<meta name="keywords" content="Impilo, IMPILO,Impilo Magazine, impilo magazine, ,IMPILO MAGAZINE,  Impilo Digital Media, Impilo Digital Media Group
-media group, Magazine,Fashion ,Modelling, Streaming, Runway, Fashion Runway, Coverage, Articles, Magazine, magazine, MAGAZINE,
- IMDG, Streaming, streaming, STREAMING, podcast, Podcast, ImpiloTV, impilotv, IMPILOTV,  " />
-<link rel="manifest" href="./site.webmanifest">
-  <!-- Tailwind & DaisyUI -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.4/dist/full.min.css" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'primary': '#000000',
-            'secondary': '#ffffff',
-            'gold': '#d4af37',
-            'overlay': 'rgba(0,0,0,0.6)',
-          },
-          fontFamily: {
-            heading: ['Playfair Display', 'serif'],
-            body: ['Montserrat', 'sans-serif']
-          },
-          boxShadow: {
-          goldGlow: "0 0 20px rgba(255, 215, 0, 0.6)",
-  }
+<meta charset="UTF-8">
+<title>IMPILO Coverage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- IMPILO DESIGN SYSTEM -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#000000',
+          gold: '#d4af37',
+
+          /* IMPILO TEXT SYSTEM */
+          text: '#b5b5b5',
+          muted: '#8a8a8a',
+          faint: '#5a5a5a',
+
+          overlay: 'rgba(0,0,0,0.6)',
+        },
+        fontFamily: {
+          heading: ['Playfair Display', 'serif'],
+          body: ['Montserrat', 'sans-serif']
+        },
+        boxShadow: {
+          goldGlow: "0 0 20px rgba(255, 215, 0, 0.6)",
         }
       }
     }
-  </script>
+  }
+</script>
+
 </head>
-<body>
-    <!-- Header -->
-  <header class="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4 bg-black border-b border-gold sticky top-0 z-[9000]">
-    <a href="#home" class="flex items-center gap-3">
-      <img src="./media/impilo_logo.png" width="60" height="60" alt="IMPILO Logo">
-      <div class="leading-tight">
-        <h1 class="text-xl sm:text-2xl font-heading text-gold">IMPILO Magazine</h1>
-        <p class="text-[11px] sm:text-xs text-gray-300 uppercase tracking-[0.18em]">
-          Impilo Digital Media Group
-        </p>
-      </div>
-    </a>
-    <!-- Toast Notification Container -->
-<div id="toastContainer" class="fixed top-6 right-6 z-50 flex flex-col gap-3"></div>
 
-    <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl"><i class="fas fa-bars"></i></button>
-    <nav id="mainNav" class="hidden md:flex gap-4 lg:gap-6 text-secondary font-semibold text-sm lg:text-base">
-      <a href="#home" class="hover:text-gold transition">Home</a>
-      <a href="#services" class="hover:text-gold transition">Services</a>
-      <a href="#jozi-fashion" class="hover:text-gold transition">Jozi Fashion</a>
-      <a href="./ita.html" class="hover:text-gold transition">Talent</a>
-      <a href="#streaming" class="hover:text-gold transition">Streaming</a>
-      <a href="./catalogue.html" class="hover:text-gold transition">Catalogue</a>
-      <a href="#subscribe" class="hover:text-gold transition">Subscribe</a>
-    </nav>
-   
+<body class="bg-black text-text font-body">
 
+<!-- YOUR ORIGINAL HEADER (UNCHANGED) -->
+<header class="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4 bg-black border-b border-gold sticky top-0 z-[9000]">
 
-  </header>
+  <a href="#home" class="flex items-center gap-3">
+    <img src="./media/impilo_logo.png" width="60" height="60" alt="IMPILO Logo">
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden flex-col bg-black text-secondary p-6 border-b border-gold md:hidden sticky top-0 z-[9000]space-y-2">
-    <a href="#home" class="py-2 hover:text-gold transition">Home</a>
-    <a href="#services" class="py-2 hover:text-gold transition">Services</a>
-    <a href="#jozi-fashion" class="py-2 hover:text-gold transition">Jozi Fashion</a>
-    <a href="./ita.html" class="py-2 hover:text-gold transition">Talent</a>
-    <a href="#streaming" class="py-2 hover:text-gold transition">Streaming</a>
-    <a href="./catalogue.html" class="py-2 hover:text-gold transition">Catalogue</a>
-    <a href="#subscribe" class="py-2 hover:text-gold transition">Subscribe</a>
-  </div>
-
-<!-- BREVITY PREMIUM STUDIO -->
-<section class="relative overflow-hidden bg-black text-white py-24 px-4 border-t border-gold/20">
-
-  <!-- BACKGROUND -->
-  <div class="absolute inset-0 opacity-20">
-    <img
-      src="./media/obres.png?text=Brevity+Studio"
-      class="w-full h-full object-cover"
-      alt="Brevity Studio"
-    />
-  </div>
-
-  <div class="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black"></div>
-
-  <div class="relative z-10 max-w-7xl mx-auto">
-
-    <!-- HERO -->
-    <div class="text-center max-w-5xl mx-auto mb-20">
-
-      <p class="uppercase tracking-[0.35em] text-xs text-gray-500 mb-5">
-        BREVITY LIVE STUDIO
+    <div class="leading-tight">
+      <h1 class="text-xl sm:text-2xl font-heading text-gold">IMPILO Magazine</h1>
+      <p class="text-[11px] sm:text-xs text-muted uppercase tracking-[0.18em]">
+        Impilo Digital Media Group
       </p>
-
-      <h2 class="text-5xl sm:text-6xl lg:text-7xl font-heading text-gold mb-8 leading-tight">
-        Online<br>
-        Broadcasting Platform
-      </h2>
-
-      <p class="text-gray-300 leading-8 text-sm sm:text-lg max-w-4xl mx-auto mb-10">
-        Brevity transforms traditional broadcasting into a premium collaborative production ecosystem for creators, media companies, fashion events, agencies and modern digital broadcasting teams.
-      </p>
-
-      <div class="flex flex-wrap justify-center gap-4">
-
-        <span class="px-5 py-3 rounded-full border border-gold text-gold text-sm">
-          Browser Broadcasting
-        </span>
-
-        <span class="px-5 py-3 rounded-full border border-gold text-gold text-sm">
-          Multi-Role Collaboration
-        </span>
-
-        <span class="px-5 py-3 rounded-full border border-gold text-gold text-sm">
-          Remote Production
-        </span>
-
-        <span class="px-5 py-3 rounded-full border border-gold text-gold text-sm">
-          Cloud Recording
-        </span>
-
-      </div>
-
     </div>
+  </a>
 
-    <!-- FEATURE GRID -->
-    <div class="grid lg:grid-cols-3 gap-8 mb-24">
+  <div id="toastContainer" class="fixed top-6 right-6 z-50 flex flex-col gap-3"></div>
 
-      <!-- CARD -->
-      <div class="group relative overflow-hidden bg-gradient-to-b from-zinc-900 to-black border border-gold/20 rounded-[32px] shadow-2xl hover:border-gold/70 hover:-translate-y-2 transition-all duration-500">
+  <button id="mobileMenuBtn" class="md:hidden text-gold text-2xl">
+    <i class="fas fa-bars"></i>
+  </button>
 
-        <div class="relative overflow-hidden h-72">
+  <nav id="mainNav" class="hidden md:flex gap-4 lg:gap-6 text-muted font-semibold text-sm lg:text-base">
 
-          <img
-            src="https://d1zrm2iszdbieq.cloudfront.net/assets/liveshow.png?q=80&w=1600&auto=format&fit=crop"
-            alt="Multi-role production"
-            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-          />
+    <a href="#home" class="hover:text-gold transition">Home</a>
+    <a href="#services" class="hover:text-gold transition">Services</a>
+    <a href="#jozi-fashion" class="hover:text-gold transition">Jozi Fashion</a>
+    <a href="./ita.html" class="hover:text-gold transition">Talent</a>
+    <a href="#streaming" class="hover:text-gold transition">Streaming</a>
+    <a href="./catalogue.html" class="hover:text-gold transition">Catalogue</a>
+    <a href="#subscribe" class="hover:text-gold transition">Subscribe</a>
 
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+  </nav>
 
-          <div class="absolute top-5 right-5 w-14 h-14 rounded-2xl backdrop-blur-md bg-black/50 border border-gold text-gold flex items-center justify-center text-xl">
-            <i class="fa-solid fa-users-gear"></i>
-          </div>
+</header>
 
-        </div>
+<!-- HERO -->
+<section class="relative h-screen flex items-end overflow-hidden">
 
-        <div class="p-8 text-left">
+  <img
+    src="https://d1zrm2iszdbieq.cloudfront.net/assets/coverage.jpeg?q=80&w=2000&auto=format&fit=crop"
+    class="absolute inset-0 w-full h-full object-cover opacity-40"
+  >
 
-          <p class="uppercase tracking-[0.25em] text-[10px] text-gray-500 mb-3">
-            COLLABORATIVE PRODUCTION
-          </p>
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
 
-          <h3 class="text-3xl font-heading text-gold mb-4">
-            Multi-Role Studio  Platform
-          </h3>
+  <div class="relative max-w-6xl mx-auto px-6 pb-24">
 
-          <p class="text-sm text-gray-300 leading-7 mb-6">
-            Directors, producers, hosts, moderators and remote guests can collaborate together in one premium production environment.
-          </p>
+    <p class="uppercase tracking-[0.4em] text-[11px] text-gold mb-6">
+      IMPILO COVERAGE • BREVITY SYSTEM
+    </p>
 
-          <div class="flex flex-wrap gap-2 text-[11px]">
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">Directors</span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">Hosts</span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">Remote Teams</span>
-          </div>
+    <h1 class="text-5xl lg:text-7xl font-heading text-gold leading-tight mb-6">
+      We Don’t Film Events.<br>
+      We Construct Visual Memory.
+    </h1>
 
-        </div>
-
-      </div>
-
-      <!-- CARD -->
-      <div class="group relative overflow-hidden bg-gradient-to-b from-zinc-900 to-black border border-gold/20 rounded-[32px] shadow-2xl hover:border-gold/70 hover:-translate-y-2 transition-all duration-500">
-
-        <div class="relative overflow-hidden h-72">
-
-          <img
-            src="https://d1zrm2iszdbieq.cloudfront.net/assets/rooftop.png?q=80&w=1600&auto=format&fit=crop"
-            alt="Broadcasting infrastructure"
-            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-          />
-
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-
-          <div class="absolute top-5 right-5 w-14 h-14 rounded-2xl backdrop-blur-md bg-black/50 border border-gold text-gold flex items-center justify-center text-xl">
-            <i class="fa-solid fa-tower-broadcast"></i>
-          </div>
-
-        </div>
-
-        <div class="p-8 text-left">
-
-          <p class="uppercase tracking-[0.25em] text-[10px] text-gray-500 mb-3">
-            LIVE BROADCASTING
-          </p>
-
-          <h3 class="text-3xl font-heading text-gold mb-4">
-            Premium Streaming Cloud
-          </h3>
-
-          <p class="text-sm text-gray-300 leading-7 mb-6">
-           Online broadcasting with overlays, multi-camera switching, audience engagement and professional remote production workflows.
-          </p>
-
-          <div class="flex flex-wrap gap-2 text-[11px]">
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">RTMP</span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">Scene Switching</span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">Overlays</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- CARD -->
-      <div class="group relative overflow-hidden bg-gradient-to-b from-zinc-900 to-black border border-gold/20 rounded-[32px] shadow-2xl hover:border-gold/70 hover:-translate-y-2 transition-all duration-500">
-
-        <div class="relative overflow-hidden h-72">
-
-          <img
-            src="https://d1zrm2iszdbieq.cloudfront.net/assets/fas.jpeg?q=80&w=1600&auto=format&fit=crop"
-            alt="Cloud production"
-            class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-          />
-
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-
-          <div class="absolute top-5 right-5 w-14 h-14 rounded-2xl backdrop-blur-md bg-black/50 border border-gold text-gold flex items-center justify-center text-xl">
-            <i class="fa-solid fa-cloud-arrow-down"></i>
-          </div>
-
-        </div>
-
-        <div class="p-8 text-left">
-
-          <p class="uppercase tracking-[0.25em] text-[10px] text-gray-500 mb-3">
-            CLOUD PRODUCTION
-          </p>
-
-          <h3 class="text-3xl font-heading text-gold mb-4">
-            Recording & Replay System
-          </h3>
-
-          <p class="text-sm text-gray-300 leading-7 mb-6">
-            Automatically record productions, generate clips, create replay content and repurpose streams for social platforms.
-          </p>
-
-          <div class="flex flex-wrap gap-2 text-[11px]">
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">Cloud Recording</span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">Replay</span>
-            <span class="px-3 py-1 rounded-full border border-gold text-gold">Clips</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- USE CASES -->
-    <div class="mb-24">
-
-      <div class="text-center mb-14">
-
-        <p class="uppercase tracking-[0.35em] text-xs text-gray-500 mb-4">
-          WHO USES BREVITY
-        </p>
-
-        <h3 class="text-4xl sm:text-5xl font-heading text-gold">
-          Built For Modern Digital Broadcasting
-        </h3>
-
-      </div>
-
-      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-        <div class="bg-zinc-900/60 border border-gold/20 rounded-3xl p-8 text-center">
-          <i class="fa-solid fa-podcast text-gold text-4xl mb-6"></i>
-          <h4 class="text-xl font-heading text-gold mb-3">Creators</h4>
-          <p class="text-sm text-gray-300 leading-7">
-            Podcasts, interviews, livestreams and remote creator collaborations.
-          </p>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-gold/20 rounded-3xl p-8 text-center">
-          <i class="fa-solid fa-newspaper text-gold text-4xl mb-6"></i>
-          <h4 class="text-xl font-heading text-gold mb-3">Media Teams</h4>
-          <p class="text-sm text-gray-300 leading-7">
-            Online broadcasting, digital newsrooms and entertainment productions.
-          </p>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-gold/20 rounded-3xl p-8 text-center">
-          <i class="fa-solid fa-bullhorn text-gold text-4xl mb-6"></i>
-          <h4 class="text-xl font-heading text-gold mb-3">Brands</h4>
-          <p class="text-sm text-gray-300 leading-7">
-            Product launches, branded livestreams and interactive campaigns.
-          </p>
-        </div>
-
-        <div class="bg-zinc-900/60 border border-gold/20 rounded-3xl p-8 text-center">
-          <i class="fa-solid fa-shirt text-gold text-4xl mb-6"></i>
-          <h4 class="text-xl font-heading text-gold mb-3">Fashion Events</h4>
-          <p class="text-sm text-gray-300 leading-7">
-            Runway streaming, backstage coverage and digital fashion experiences.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- CTA -->
-    <div class="text-center">
-
-      <h3 class="text-4xl font-heading text-gold mb-6">
-        Professional Live Production — Accessible From The Browser
-      </h3>
-
-      <p class="text-gray-300 max-w-3xl mx-auto leading-8 text-sm sm:text-base mb-10">
-        Brevity empowers creators and organizations with premium collaborative broadcasting tools without requiring traditional studio infrastructure.
-      </p>
-
-      <div class="flex flex-wrap justify-center gap-5">
-
-        <a
-          href="https://studio.impilomag.co.za"
-          class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#d4af37] to-[#f3d67a] text-black text-xs uppercase tracking-[0.18em] font-semibold hover:scale-105 transition duration-300"
-        >
-          <i class="fa-solid fa-arrow-right"></i>
-          Check our Demo
-        </a>
-
-        <a
-          href="#"
-          class="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-gold text-gold text-xs uppercase tracking-[0.18em] font-semibold hover:bg-gold hover:text-black transition duration-300"
-        >
-          <i class="fa-solid fa-play"></i>
-          Watch Showcase
-        </a>
-
-      </div>
-
-    </div>
+    <p class="text-text max-w-2xl leading-8">
+      A premium broadcast coverage system powered by Brevity — merging live production, editorial storytelling, and cultural documentation.
+    </p>
 
   </div>
 
 </section>
+
+<!-- EDITORIAL STATEMENT -->
+<section class="py-28 px-6 lg:px-24 bg-black border-t border-gold/10">
+
+  <div class="max-w-4xl mx-auto text-center">
+
+    <p class="uppercase tracking-[0.35em] text-[11px] text-faint mb-6">
+      EDITORIAL POSITION
+    </p>
+
+    <h2 class="text-4xl lg:text-5xl font-heading text-gold mb-10">
+      Coverage Is Direction, Not Recording
+    </h2>
+
+    <p class="text-text leading-8">
+      Every frame is intentional. Every cut is composed. IMPILO Coverage transforms real-world events into structured visual narratives shaped in real time.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- SINGLE HERO IMAGE -->
+<section class="relative h-[80vh] overflow-hidden border-t border-gold/10">
+
+  <img
+    src="https://d1zrm2iszdbieq.cloudfront.net/assets/liveshow.png?q=80&w=2000&auto=format&fit=crop"
+    class="w-full h-full object-cover opacity-90"
+  >
+
+  <div class="absolute inset-0 bg-black/30"></div>
+
+</section>
+
+<!-- FEATURE SECTION -->
+<section class="py-28 px-6 lg:px-24 bg-black border-t border-gold/10">
+
+  <div class="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+
+    <div>
+
+      <p class="uppercase tracking-[0.35em] text-[11px] text-faint mb-5">
+        MULTICAMERA SYSTEM
+      </p>
+
+      <h2 class="text-4xl font-heading text-gold mb-6">
+        A Controlled Broadcast Language
+      </h2>
+
+      <p class="text-text leading-8 mb-6">
+        Brevity allows directors to shape live events like film — not documentation. Every camera becomes part of a visual narrative system.
+      </p>
+
+      <div class="text-muted text-sm space-y-2">
+        <p>• Live directed switching</p>
+        <p>• Editorial framing control</p>
+        <p>• Real-time storytelling</p>
+        <p>• Broadcast-grade composition</p>
+      </div>
+
+    </div>
+
+    <img
+      src="https://d1zrm2iszdbieq.cloudfront.net/assets/rooftop.png?q=80&w=1600&auto=format&fit=crop"
+      class="rounded-3xl h-[600px] w-full object-cover border border-gold/20"
+    >
+
+  </div>
+
+</section>
+
+<!-- BTS SECTION -->
+<section class="relative h-[75vh] overflow-hidden border-t border-gold/10">
+
+  <img
+    src="https://d1zrm2iszdbieq.cloudfront.net/assets/fas.jpeg?q=80&w=2000&auto=format&fit=crop"
+    class="w-full h-full object-cover opacity-90"
+  >
+
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <div class="absolute bottom-10 left-10 max-w-xl">
+
+    <p class="uppercase tracking-[0.35em] text-[11px] text-gold mb-4">
+      BEHIND THE SCENES
+    </p>
+
+    <h2 class="text-3xl font-heading text-gold mb-4">
+      The Unseen Narrative Shapes The Final Story
+    </h2>
+
+    <p class="text-text text-sm leading-7">
+      Preparation, emotion, chaos, and creativity — captured as part of the full editorial experience.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-28 px-6 lg:px-24 bg-black border-t border-gold/10 text-center">
+
+  <h2 class="text-4xl lg:text-5xl font-heading text-gold mb-8">
+    Coverage Is Cultural Documentation
+  </h2>
+
+  <p class="text-muted max-w-3xl mx-auto leading-8 mb-10">
+    IMPILO transforms events into cinematic archives — merging journalism, production, and broadcast storytelling.
+  </p>
+
+  <a href="mailto:bookings@impilomag.co.za"
+     class="px-10 py-5 bg-gradient-to-r from-[#d4af37] to-[#f3d67a] text-black rounded-full uppercase text-xs tracking-[0.2em] font-semibold hover:scale-105 transition">
+    Book Coverage
+  </a>
+
+</section>
+
 </body>
 </html>
